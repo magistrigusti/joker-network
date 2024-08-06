@@ -1,0 +1,12 @@
+.header {
+  grid-area: header;
+  background-image: linear-gradient(90deg, #00d4ff 0%, #090979 35%, #020024 100%);
+  padding: 20px;
+  z-index: 2;
+}
+
+.header img {
+  height: 100px;
+}
+
+/* background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%); */

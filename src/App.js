@@ -1,32 +1,17 @@
 import React from "react";
 import './App.css';
-import logo from "./img/logo.png";
+import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
+import Profile from './components/Profile/Profile';
 
 
 
 const App = () => {
   return (
     <div className="app-wrapper">
-      <header className="header">
-        <img src={logo} alt="logo" />
-      </header>
-      <nav className="nav">
-        <div><a>Profile</a></div>
-        <div><a>Message</a></div>
-        <div><a>Music</a></div>
-        <div><a>Settings</a></div>
-      </nav>
-      <div className="background-container">
-        <div className="text-overlay">
-          <div>avatar + discription</div>
-          <div>My post
-            <div>New post</div>
-            <div>post 1</div>
-            <div>post 2</div>
-          </div>
-        </div>
-        
-      </div>
+      <Header />
+      <NavBar />
+      <Profile />
     </div>
   );
 }

@@ -1,0 +1,24 @@
+.posts {
+  text-align: center;
+  padding: 20px;
+}
+
+.post_item {
+  font-family: "Grey Qo", cursive;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.post_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.like {
+  height: 30px;
+  width: 30px;
+}
