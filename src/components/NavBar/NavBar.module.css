@@ -4,19 +4,3 @@
   padding-top: 70px;
 }
 
-.item {
-  margin: 25px;  
-  padding-left: 35px;
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-family: "Gorditas", serif;
-  color: rgb(87, 225, 197);
-}
-
-.item_last {
-  padding-top: 50px;
-}
-
-.item.active {
-  color: rgb(255, 149, 0);
-}

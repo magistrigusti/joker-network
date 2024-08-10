@@ -14,8 +14,8 @@ const MyPosts = () => {
 
       <div>
         <h5 className={style.post_title}>My posts:</h5>
-        <Post message="Hi, my frends." />
-        <Post message="How are your life" />
+        <Post message="Hi, my frends." like="4" />
+        <Post message="How are your life" like="7" />
       </div>
     </div>
   )

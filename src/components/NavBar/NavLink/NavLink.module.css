@@ -1,0 +1,20 @@
+.item {
+  margin: 40px 25px;  
+  padding-left: 35px;
+}
+
+.item a {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: "Gorditas", serif;
+  color: rgb(87, 225, 197);
+  text-decoration: none;
+}
+
+.item .active {
+  color: #EE914A;
+}
+
+.item:last-child {
+  padding-top: 80px;
+}

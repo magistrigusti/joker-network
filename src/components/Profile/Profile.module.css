@@ -1,37 +1,3 @@
-.background_container {
-  grid-area: content;
-  position: relative;
-  height: 87vh;
-  background-image: url("../../img/img-content.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-}
-
-.background_container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-.text_overlay {
-  position: relative;
-  color: rgb(255, 255, 255);
-  width: 100vh;
-  font-size: 2em;
-  font-family: "Rye", serif;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
-  padding-left: 40px;
-  padding-top: 20px;
-  border-radius: 10px;
-  z-index: 1;
-}
 
 .avatar {
   width: 120px;
