@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './Post.module.css';
-import avatar from '../../../../img/avatar.png';
-import like from '../../../../img/like.png';
+import style from './MyPosts.module.css';
+import avatar from '../../../img/avatar.png';
+import like from '../../../img/like.png';
 
-const Post = (props) => {
+const MyPosts = (props) => {
   return (
     <div className={style.posts}>
       <div className={style.post_item}>
@@ -18,4 +18,4 @@ const Post = (props) => {
   )
 }
 
-export default Post;
+export default MyPosts;

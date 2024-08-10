@@ -1,18 +1,7 @@
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.profile_wrapper {
+  display: flex;
+  width: 100%;
+  
 }
-
-.name {
-  font-weight: 400;
-  margin-bottom: 10px;
-  margin-top: -5px;
-  font-family: "Rye", serif;
-  letter-spacing: 4px;
-  color: #EE914A;
-}
-
 
 

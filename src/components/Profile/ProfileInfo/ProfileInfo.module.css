@@ -1,0 +1,15 @@
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: 400;
+  margin: 10px;
+  margin-top: 15px;
+  font-family: "Rye", serif;
+  letter-spacing: 4px;
+  color: #EE914A;
+}

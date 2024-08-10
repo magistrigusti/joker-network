@@ -6,8 +6,9 @@ import Nav from './NavLink/NavLink';
 const NavBar = () => {
   return (
     <nav className={style.nav}>
-      <Nav to="profile" name="Profile" />
-      <Nav to="dialogs" name="Messages" />
+      <Nav to="/profile" name="Profile" />
+      <Nav to="/posts" name="Posts" />
+      <Nav to="/dialogs" name="Messages" />
       <Nav to="/music" name="Music" />
       <Nav to="/news" name="News" />
       <Nav to="/video" name="Video" />
