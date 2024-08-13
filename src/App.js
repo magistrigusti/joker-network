@@ -6,10 +6,12 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import Posts from './components/Posts/Posts';
+import Friends from './components/Friends/Friends';
 
 
 
-const App = (props) => {
+const App = ({state}) => {
+
   return (
     <BrowserRouter >
       <div className="app-wrapper">
@@ -19,8 +21,9 @@ const App = (props) => {
           <div className="text_overlay">
             <Routes>
               <Route path="/profile" element={<Profile />} />
-              <Route path="/posts" element={<Posts />} />
-              <Route path="/dialogs" element={<Dialogs />} />
+              <Route path="/posts" element={<Posts state={state.postsPage} />} />
+              <Route path="/friends" element={<Friends state={state.friendsPage}  />} />
+              <Route path="/dialogs" element={<Dialogs state={state.dialogsPage} />} />
             </Routes>
           </div>
         </div>

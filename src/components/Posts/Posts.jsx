@@ -2,14 +2,10 @@ import React from 'react';
 import style from './Posts.module.css';
 import MyPosts from './MyPosts/MyPosts';
 
-const Posts = () => {
-  let postsData = [
-    {id: 1, message: "Hi, my frends.", likeCount: 5},
-    {id: 2, message: "How are your life", likeCount: 12},
-    {id: 3, message: "welcome to my social network", likeCount: 17}
-  ];
-
-  let postsElements = postsData.map(post => <MyPosts message={post.message} like={post.likeCount} />);
+const Posts = ({state}) => {
+  let postsElements = state.postsData.map(
+    post => <MyPosts message={post.message} like={post.likeCount} />
+  );
 
   return (
     <div className={style.post_wrapper}>

@@ -1,0 +1,15 @@
+.friend_item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-right: 30px;
+  font-family: "Mochiy Pop One", sans-serif;
+  justify-content: space-between;
+}
+
+.friend_avatar {
+  height: 80px;
+  width: 80px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
