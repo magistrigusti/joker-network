@@ -25,7 +25,7 @@ let state = {
     usersData: [
       { id: 1, name: "Saha", avatar: sahaAvatar },
       { id: 2, name: "Masha", avatar: mashaAvatar },
-      { id: 3, name: "Radmila",avatar: radmilaAvatar },
+      { id: 3, name: "Radmila",avatar: radmilaAvatar }, 
       { id: 4, name: "Anna", avatar: annaAvatar }
     ],
     
@@ -35,7 +35,31 @@ let state = {
       { id: 3, message: "I'm fine, thank you" },
       { id: 4, message: "But I'm busy now" }
     ],
+  },
+
+  sidebarPage: {
+    sidebarData: [
+      {id: 1, to: "/profile", name: "Profile"},
+      {id: 2, to: "/posts", name: "Posts"},
+      {id: 3, to: "/friends", name: "Friends"},
+      {id: 4, to: "/dialogs", name: "Dialogs"},
+      {id: 5, to: "/music", name: "Music"},
+      {id: 6, to: "/news", name: "News"},
+      {id: 7, to: "/video", name: "Video"},
+      {id: 8, to: "/settings", name: "Settings"}
+    ]
   }
+
+}
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 4,
+    message: postMessage,
+    likeCount: 0
+  };
+
+  state.postsPage.postsData.push(newPost);
 }
 
 export default state;

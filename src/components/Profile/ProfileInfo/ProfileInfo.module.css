@@ -13,3 +13,17 @@
   letter-spacing: 4px;
   color: #EE914A;
 }
+
+.years { 
+  margin-left: 10px;
+  font-size: 34px;
+}
+
+.status_wrapper {
+  margin-bottom: 20px;
+  font-size: 38px;
+}
+
+.status {
+  color: rgb(141, 20, 20);
+}

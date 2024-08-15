@@ -1,5 +1,5 @@
 .item {
-  margin: 40px 20px;  
+  margin: 20px 20px;  
   padding-left: 30px;
 }
 
@@ -16,5 +16,5 @@
 }
 
 .item:last-child {
-  padding-top: 80px;
+  padding-top: 60px;
 }

@@ -1,6 +1,6 @@
 .dialogs {
   display: grid;
-  grid-template-columns: 3fr 10fr;
+  grid-template-columns: 4fr 9fr;
   padding-bottom: 10px;
 
   position: relative;
@@ -23,6 +23,42 @@
 }
 
 .messages {
-  
   padding: 10px;
+}
+
+.new_message_wrapper {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.imput_message {
+  margin: 15px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px black solid;
+  cursor: pointer;
+  text-align: center;
+}
+
+.imput_message::placeholder {
+  color: black;
+  bottom: 20px;
+}
+
+.send_message {
+  margin: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color:rgb(0, 60, 128);
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.send_message:hover {
+  background-color: rgb(0, 40, 80);
+  color: orangered;
+  margin-top: 5px;
 }

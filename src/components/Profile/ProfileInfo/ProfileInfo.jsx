@@ -10,7 +10,11 @@ const ProfileInfo = () => {
       </div>
       <div>
         <h4 className={style.name}>Knyazhe</h4>
-        <p>38 year old</p>
+        <p className={style.years}>38 years old</p>
+        <div className={style.status_wrapper}>
+          <span>Status: </span>
+          <span className={style.status}>I'm a joker</span>
+        </div>
       </div>
     </div>
   )

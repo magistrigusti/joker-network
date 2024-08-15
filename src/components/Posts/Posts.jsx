@@ -7,15 +7,27 @@ const Posts = ({state}) => {
     post => <MyPosts message={post.message} like={post.likeCount} />
   );
 
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  }
+
   return (
     <div className={style.post_wrapper}>
       <div className={style.new_post}>
         <h5 className={style.new_post_title}>New post</h5>
         <div>
-          <textarea className={style.input} placeholder="write your post"></textarea>
+          <textarea className={style.input} 
+            ref={newPostElement}
+            placeholder="write your post"
+          ></textarea>
         </div>
         <div>
-          <button className={style.post_button}>Add post</button>
+          <button className={style.post_button}
+            onClick={ addPost }
+          >Add post</button>
         </div>
       </div>
 

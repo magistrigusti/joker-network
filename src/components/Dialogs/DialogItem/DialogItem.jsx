@@ -8,7 +8,8 @@ const DialogItem = (props) => {
   return (
     <div className={style.dialog}>
       <NavLink to={path}>
-        {props.name}
+        <img className={style.avatar} src={props.avatar} alt="" />
+        <div className={style.user_name}>{props.name}</div>
       </NavLink>
     </div>
   )
