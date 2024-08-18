@@ -5,7 +5,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 const Profile = (props) => {
   return (
     <div className={style.profile_wrapper}>
-      <ProfileInfo />
+      <ProfileInfo profile={props.profile} />
     </div>
   )
 }

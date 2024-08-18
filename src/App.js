@@ -10,19 +10,26 @@ import Friends from './components/Friends/Friends';
 
 
 
-const App = ({ state }) => {
+const App = (props) => {
 
   return (
     <div className="app-wrapper">
       <Header />
-      <NavBar state={state.sidebarPage} />
+      <NavBar state={props.state.sidebarPage} />
       <div className="background_container ">
         <div className="text_overlay">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/posts" element={<Posts state={state.postsPage} />} />
-            <Route path="/friends" element={<Friends state={state.friendsPage} />} />
-            <Route path="/dialogs" element={<Dialogs state={state.dialogsPage} />} />
+            <Route path="/profile" element={<Profile profile={props.state.profilePage.profile} />} />
+            <Route path="/posts" element={
+              <Posts 
+                profile={props.state.profilePage.profile}
+                postsPage={props.state.postsPage} 
+                addPost={props.addPost} 
+                updateNewPostText={props.updateNewPostText}
+              />} 
+            />
+            <Route path="/friends" element={<Friends state={props.state.friendsPage} />} />
+            <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
           </Routes>
         </div>
       </div>

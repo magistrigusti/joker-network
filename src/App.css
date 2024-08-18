@@ -11,7 +11,7 @@
 .background_container {
   grid-area: content;
   position: relative;
-  height: 87vh;
+  height: 100vh;
   background-image: url("./img/img-content.jpg");
   background-size: cover;
   background-position: center;
@@ -32,7 +32,8 @@
 .text_overlay {
   position: relative;
   /* color: rgb(255, 255, 255); */
-  width: 125vh;
+  width: 90%;
+  height: 100%;
   font-size: 2em;
   font-family: "Rye", serif;
   /* background: rgb(238,174,202);

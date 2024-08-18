@@ -1,19 +1,26 @@
 import React from 'react';
 import style from './ProfileInfo.module.css';
-import avatar from '../../../img/avatar.png';
 
-const ProfileInfo = () => {
+
+const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-        <img className={style.avatar} src={avatar} alt="Avatar" />
+        <img className={style.avatar} src={props.profile.photos.avatar} alt="Avatar" />
       </div>
       <div>
-        <h4 className={style.name}>Knyazhe</h4>
-        <p className={style.years}>38 years old</p>
+        <h4 className={style.name}>{props.profile.fullName}</h4>
+        <div className={style.years}>
+          <p>Years Old:  </p>
+          {props.profile.yearsOld}
+        </div>
+        <div className={style.about_wrapper}>
+          <span>About Me: </span>
+          <div className={style.about}>{props.profile.aboutMe}</div>
+        </div>
         <div className={style.status_wrapper}>
           <span>Status: </span>
-          <span className={style.status}>I'm a joker</span>
+          <span className={style.status}>{props.profile.userStatus}</span>
         </div>
       </div>
     </div>

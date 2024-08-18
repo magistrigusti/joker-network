@@ -1,10 +1,11 @@
 .friend_item {
   display: flex;
   align-items: center;
+  text-align: center;
   padding: 10px;
   padding-right: 30px;
   font-family: "Mochiy Pop One", sans-serif;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   color: rgb(75, 11, 172);
 }
 
@@ -13,4 +14,27 @@
   width: 80px;
   margin-right: 20px;
   border-radius: 50%;
+}
+
+.friend_name {
+  font-weight: 600;
+  margin: 10px;
+}
+
+.friend_status {
+  margin: 10px;
+  font-size: 18px;
+  color: #dda9a9;
+}
+
+.friend_country {
+  margin: 10px;
+  font-size: 22px;
+  color: #9B9B9B;
+}
+
+.friend_city {
+  margin: 10px;
+  font-size: 20px;
+  color: #9B9B9B;
 }

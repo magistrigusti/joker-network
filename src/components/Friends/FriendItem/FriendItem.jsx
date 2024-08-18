@@ -5,10 +5,11 @@ const FriendItem = (props) => {
   return (
     <div className={style.friend_item}>
       <img className={style.friend_avatar} src={props.avatar} alt="friend avatar img" />
-      <div>{props.name}</div>
-      <div>{props.country}</div>
-      <div>{props.city}</div>
-      <div>{props.status}</div>
+      <div className={style.friend_name}>{props.name}</div>
+      <div className={style.friend_status}>{props.status}</div>
+      <div className={style.friend_country}>{props.country}</div>
+      <div className={style.friend_city}>{props.city}</div>
+      
     </div>
   )
 }
