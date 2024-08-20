@@ -76,30 +76,37 @@ let store = {
     }
   
   },
-
-  rerenderEntireTree () {
+  _callSubscriber () {
     console.log("State is changed");
+  },
+
+  getState() {
+    return this._state;
+  },
+  subscribe (observer) {
+    this._callSubscriber = observer;
   },
 
   addPost () {
     let newPost = {
       id: 4,
-      message: state.postsPage.newPostText,
+      message: this._state.postsPage.newPostText,
       likeCount: 0
     };
+    this._state.postsPage.postsData.push(newPost);
+    this._state.postsPage.newPostText = "";
+    this._callSubscriber(this._state)
   },
 
   updateNewPostText (newText) {
-    state.postsPage.newPostText = "";
-    rerenderEntireTree(state);
+    this._state.postsPage.newPostText = newText;
+    this._callSubscriber(this._state);
   },
 
-  subscribe (observer) {
-    rerenderEntireTree = observer;
-  },
+  
 }
 
 
-window.state = state;
+window.store = store;
 
 export default store;
