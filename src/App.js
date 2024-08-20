@@ -7,6 +7,7 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import Posts from './components/Posts/Posts';
 import Friends from './components/Friends/Friends';
+import News from './components/News/News';
 
 
 
@@ -30,6 +31,7 @@ const App = (props) => {
             />
             <Route path="/friends" element={<Friends state={props.state.friendsPage} />} />
             <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
+            <Route path="/news" element={<News />} />
           </Routes>
         </div>
       </div>
