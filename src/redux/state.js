@@ -4,19 +4,22 @@ import radmilaAvatar from '../img/radmila.png';
 import annaAvatar from '../img/anna.png';
 import myAvatar from "../img/avatar.png";
 import yanaAvatar from '../img/yanaavatarjpg.jpg';
+import myfoto1 from '../img/myfoto-1.png';
+import myfoto2 from '../img/myfoto-2.png';
+import myfoto3 from '../img/myfoto-3.png';
 
 
 let store = {
   _state: {
     postsPage: {
       postsData: [
-        {id: 1, message: "Hi, my frends.", likeCount: 5},
-        {id: 2, message: "How are your life", likeCount: 12},
-        {id: 3, message: "welcome to my social network", likeCount: 17}
+        { id: 1, message: "Hi, my frends.", likeCount: 5 },
+        { id: 2, message: "How are your life", likeCount: 12 },
+        { id: 3, message: "welcome to my social network", likeCount: 17 }
       ],
       newPostText: 'Joker',
     },
-  
+
     profilePage: {
       profile: {
         userId: 1,
@@ -24,7 +27,13 @@ let store = {
         yearsOld: 38,
         aboutMe: "I'm a freelance web developer",
         userStatus: "I'm a joker",
-        photos: {avatar: myAvatar}
+        photos: { avatar: myAvatar },
+        photosLarge: [
+          { id: 1, name: myfoto1 },
+          { id: 2, name: myfoto2 },
+          { id: 3, name: myfoto3 },
+        ]
+
       },
       status: "I'm looking for new opportunities",
       contacts: {
@@ -35,7 +44,7 @@ let store = {
       lookingForAJob: true,
       lookingForFriends: true,
     },
-  
+
     friendsPage: {
       usersData: [
         { id: 1, name: "Saha", avatar: sahaAvatar, country: "Izrael", city: "Holon", status: "online" },
@@ -45,15 +54,15 @@ let store = {
         { id: 5, name: "Yana", avatar: yanaAvatar, country: "Russua", city: "Mosrow", status: "online" }
       ],
     },
-  
+
     dialogsPage: {
       usersData: [
         { id: 1, name: "Saha", avatar: sahaAvatar },
         { id: 2, name: "Masha", avatar: mashaAvatar },
-        { id: 3, name: "Radmila",avatar: radmilaAvatar }, 
+        { id: 3, name: "Radmila", avatar: radmilaAvatar },
         { id: 4, name: "Anna", avatar: annaAvatar }
       ],
-      
+
       messagesData: [
         { id: 1, message: "Hello Saha" },
         { id: 2, message: "How are you feel" },
@@ -61,49 +70,56 @@ let store = {
         { id: 4, message: "But I'm busy now" }
       ],
     },
-  
+
     sidebarPage: {
       sidebarData: [
-        {id: 1, to: "/profile", name: "Profile"},
-        {id: 2, to: "/posts", name: "Posts"},
-        {id: 3, to: "/friends", name: "Friends"},
-        {id: 4, to: "/dialogs", name: "Dialogs"},
-        {id: 5, to: "/news", name: "News"},
-        {id: 6, to: "/music", name: "Music"},
-        {id: 7, to: "/video", name: "Video"},
-        {id: 8, to: "/settings", name: "Settings"}
+        { id: 1, to: "/profile", name: "Profile" },
+        { id: 2, to: "/posts", name: "Posts" },
+        { id: 3, to: "/friends", name: "Friends" },
+        { id: 4, to: "/dialogs", name: "Dialogs" },
+        { id: 5, to: "/news", name: "News" },
+        { id: 6, to: "/music", name: "Music" },
+        { id: 7, to: "/video", name: "Video" },
+        { id: 8, to: "/settings", name: "Settings" }
       ]
     }
-  
+
   },
-  _callSubscriber () {
+  _callSubscriber() {
     console.log("State is changed");
   },
 
   getState() {
     return this._state;
   },
-  subscribe (observer) {
+  subscribe(observer) {
     this._callSubscriber = observer;
   },
 
-  addPost () {
-    let newPost = {
-      id: 4,
-      message: this._state.postsPage.newPostText,
-      likeCount: 0
-    };
-    this._state.postsPage.postsData.push(newPost);
-    this._state.postsPage.newPostText = "";
-    this._callSubscriber(this._state)
-  },
+  // _addPost() {
 
-  updateNewPostText (newText) {
-    this._state.postsPage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
+  // },
+  // _updateNewPostText(newText) {
 
-  
+  // },
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      // this._addPost();
+      let newPost = {
+        id: 4,
+        message: this._state.postsPage.newPostText,
+        likeCount: 0
+      };
+      this._state.postsPage.postsData.push(newPost);
+      this._state.postsPage.newPostText = "";
+      this._callSubscriber(this._state)
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      // this._updateNewPostText(action.newText);
+      this._state.postsPage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
+  }
 }
 
 

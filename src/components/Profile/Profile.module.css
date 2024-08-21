@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   color: rgb(255, 255, 255);
-  width: 85vh;
+  width: 100%;
   font-size: 2em;
   font-family: "Rye", serif;
   background: rgb(238,174,202);
@@ -12,5 +12,9 @@
   border-radius: 10px;
   z-index: 1;
 }
+
+
+
+
 
 
