@@ -7,7 +7,10 @@ import yanaAvatar from '../img/yanaavatarjpg.jpg';
 import myfoto1 from '../img/myfoto-1.png';
 import myfoto2 from '../img/myfoto-2.png';
 import myfoto3 from '../img/myfoto-3.png';
+import myfoto4 from '../img/myfoto-4.png';
 
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
 let store = {
   _state: {
@@ -29,9 +32,10 @@ let store = {
         userStatus: "I'm a joker",
         photos: { avatar: myAvatar },
         photosLarge: [
-          { id: 1, name: myfoto1 },
+          { id: 1, name: myfoto3 },
           { id: 2, name: myfoto2 },
-          { id: 3, name: myfoto3 },
+          { id: 3, name: myfoto1 },
+          { id: 4, name: myfoto4 },
         ]
 
       },
@@ -104,7 +108,7 @@ let store = {
   // },
 
   dispatch(action) {
-    if (action.type === "ADD-POST") {
+    if (action.type === ADD_POST) {
       // this._addPost();
       let newPost = {
         id: 4,
@@ -114,12 +118,20 @@ let store = {
       this._state.postsPage.postsData.push(newPost);
       this._state.postsPage.newPostText = "";
       this._callSubscriber(this._state)
-    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
       // this._updateNewPostText(action.newText);
       this._state.postsPage.newPostText = action.newText;
       this._callSubscriber(this._state);
     }
   }
+}
+
+export const addPostActionCreator = () => {
+  return { type: ADD_POST }
+};
+
+export const updateNewPostTextActionCreator = (text) => {
+  return { type: UPDATE_NEW_POST_TEXT, newText: text }
 }
 
 

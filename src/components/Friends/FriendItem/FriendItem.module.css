@@ -9,6 +9,12 @@
   color: rgb(75, 11, 172);
 }
 
+.friend_item:hover {
+  border: 3px white solid;
+  border-radius: 15px;
+  margin-right: 30px;
+}
+
 .friend_avatar { 
   height: 80px;
   width: 80px;

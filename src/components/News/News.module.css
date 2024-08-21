@@ -12,3 +12,16 @@
   border-radius: 10px;
   z-index: 1;
 }
+
+.news_wrapper p {
+  color: white;
+}
+
+.news_title {
+  font-weight: 400;
+}
+
+.news_link {
+  color: rgb(100, 149, 237);
+  text-decoration: none;
+}

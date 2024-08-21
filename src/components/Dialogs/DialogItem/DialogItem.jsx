@@ -7,7 +7,7 @@ const DialogItem = (props) => {
   let path = "/dialog/" + props.id;
 
   return (
-    <div>
+    <div className={style.user_dialog}>
       <NavLink to={path}>
         <div className={style.dialog}>
 

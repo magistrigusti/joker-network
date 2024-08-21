@@ -4,11 +4,11 @@
 }
 
 .post_item {
-  font-family: "Grey Qo", cursive;
-  font-weight: 500;
-  letter-spacing: 2spx;
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
   padding-bottom: 10px;
-  color: rgb(244, 240, 240);
+  color: rgb(58, 43, 43);
 }
 
 .post_avatar {

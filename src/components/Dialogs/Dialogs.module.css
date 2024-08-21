@@ -24,6 +24,7 @@
 
 .messages {
   padding: 10px;
+  text-decoration: none;
 }
 
 .new_message_wrapper {

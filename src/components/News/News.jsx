@@ -34,9 +34,9 @@ const News = () => {
       <ul>
         {articles.map((article, index) => (
           <li key={index}>
-            <h3>{article.title}</h3>
+            <h3 className={style.news_title}>{article.title}</h3>
             <p>{article.description}</p>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">Read More</a>
+            <a className={style.news_link} href={article.url} target="_blank" rel="noopener noreferrer">Read More</a>
           </li>
         ))}
       </ul>

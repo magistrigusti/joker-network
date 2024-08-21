@@ -3,7 +3,11 @@
   padding-bottom: 10px;
 }
 
-.dialog a {
+.user_dialog {
+  padding-top: 20px;
+}
+
+.user_dialog a {
   text-decoration: none;
 }
 
