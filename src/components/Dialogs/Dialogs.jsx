@@ -12,12 +12,10 @@ const Dialogs = ({ state }) => {
 
   return (
     <div className={style.dialogs}>
+
       <div className={style.dialogs_item}>
         {dialogsElements}
       </div>
-
-
-      
 
       <div className={style.messages}>
         {messagesElements}
@@ -25,9 +23,12 @@ const Dialogs = ({ state }) => {
         <div className={style.new_message_wrapper}>
           <textarea className={style.imput_message}
             placeholder="write your message"
-          ></textarea>
+          >
+          </textarea>
+
           <button className={style.send_message}>Send</button>
         </div>
+        
       </div>
     </div>
   )

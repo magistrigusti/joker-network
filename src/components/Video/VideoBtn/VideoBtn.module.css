@@ -1,0 +1,20 @@
+.video_button_wrapper {
+  margin: 12px;
+}
+
+.video_button {
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color:rgb(0, 60, 128);
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.video_button:hover {
+  background-color: rgb(0, 40, 80);
+  color: orangered;
+  margin-top: 5px;
+}

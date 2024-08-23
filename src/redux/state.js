@@ -11,6 +11,7 @@ import myfoto4 from '../img/myfoto-4.png';
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
 let store = {
   _state: {
@@ -73,6 +74,8 @@ let store = {
         { id: 3, message: "I'm fine, thank you" },
         { id: 4, message: "But I'm busy now" }
       ],
+
+      newMessageBody: ''
     },
 
     sidebarPage: {
@@ -85,6 +88,29 @@ let store = {
         { id: 6, to: "/music", name: "Music" },
         { id: 7, to: "/video", name: "Video" },
         { id: 8, to: "/settings", name: "Settings" }
+      ]
+    },
+
+    musicPage: {
+      musicBtnData: [
+        { id: 1, name: "All" },
+        { id: 2, name: "Favorites" },
+        { id: 3, name: "Rock", src: "rock.mp3" },
+        { id: 4, name: "Pop", src: "pop.mp3" },
+        { id: 5, name: "Hip-hop", src: "hip-hop.mp3" },
+        { id: 6, name: "Classical", src: "classical.mp3" }
+      ]
+    },
+
+    videoPage: {
+      videoBtnData: [
+        { id: 1, name: "All" },
+        { id: 2, name: "Favorites" },
+        { id: 3, name: "For You" },
+        { id: 4, name: "Podcasts" },
+        { id: 5, name: "Shorts"},
+        { id: 6, name: "Viewed"},
+        { id: 7, name: "Music" },
       ]
     }
 
@@ -100,16 +126,10 @@ let store = {
     this._callSubscriber = observer;
   },
 
-  // _addPost() {
-
-  // },
-  // _updateNewPostText(newText) {
-
-  // },
 
   dispatch(action) {
     if (action.type === ADD_POST) {
-      // this._addPost();
+
       let newPost = {
         id: 4,
         message: this._state.postsPage.newPostText,
@@ -119,20 +139,18 @@ let store = {
       this._state.postsPage.newPostText = "";
       this._callSubscriber(this._state)
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      // this._updateNewPostText(action.newText);
       this._state.postsPage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.dialogsPage.newMessageBody = action.messageBody;
       this._callSubscriber(this._state);
     }
   }
 }
 
-export const addPostActionCreator = () => {
-  return { type: ADD_POST }
-};
+export const addPostActionCreator = () => ({ type: ADD_POST })
 
-export const updateNewPostTextActionCreator = (text) => {
-  return { type: UPDATE_NEW_POST_TEXT, newText: text }
-}
+export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
 
 window.store = store;

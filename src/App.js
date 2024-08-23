@@ -8,6 +8,8 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Posts from './components/Posts/Posts';
 import Friends from './components/Friends/Friends';
 import News from './components/News/News';
+import Music from './components/Music/Music';
+import Video from './components/Video/Video';
 
 
 
@@ -31,6 +33,8 @@ const App = (props) => {
             <Route path="/friends" element={<Friends state={props.state.friendsPage} />} />
             <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
             <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music state={props.state.musicPage} />} />
+            <Route path="/video" element={<Video state={props.state.videoPage} />} />
           </Routes>
         </div>
       </div>
