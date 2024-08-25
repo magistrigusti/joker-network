@@ -1,6 +1,29 @@
 .nav {
   grid-area: nav;
+  position: relative;
   background-image: linear-gradient(90deg, #00d4ff 0%, #090979 65%, #020024 100%);
+  width: 230px;
+  transition: width 0.3s;
   padding-top: 70px;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.nav.collapsed {
+  width: 60px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.toggle_btn {
+  background: none;
+  cursor: pointer;
 }
 

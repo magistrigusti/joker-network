@@ -8,10 +8,19 @@ import myfoto1 from '../img/myfoto-1.png';
 import myfoto2 from '../img/myfoto-2.png';
 import myfoto3 from '../img/myfoto-3.png';
 import myfoto4 from '../img/myfoto-4.png';
+import { FaHome } from "react-icons/fa";
+import { FaMessage } from "react-icons/fa6";
+import { FaDiagramNext } from "react-icons/fa6";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaNewspaper } from "react-icons/fa";
+import { FaMusic } from "react-icons/fa";
+import { FaVideo } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
   _state: {
@@ -80,14 +89,14 @@ let store = {
 
     sidebarPage: {
       sidebarData: [
-        { id: 1, to: "/profile", name: "Profile" },
-        { id: 2, to: "/posts", name: "Posts" },
-        { id: 3, to: "/friends", name: "Friends" },
-        { id: 4, to: "/dialogs", name: "Dialogs" },
-        { id: 5, to: "/news", name: "News" },
-        { id: 6, to: "/music", name: "Music" },
-        { id: 7, to: "/video", name: "Video" },
-        { id: 8, to: "/settings", name: "Settings" }
+        { id: 1, to: "/profile", name: "Profile", icon: <FaHome /> },
+        { id: 2, to: "/posts", name: "Posts", icon: <FaDiagramNext /> },
+        { id: 3, to: "/friends", name: "Friends", icon: <FaPeopleGroup /> },
+        { id: 4, to: "/dialogs", name: "Dialogs", icon: <FaMessage /> },
+        { id: 5, to: "/news", name: "News",icon: <FaNewspaper /> },
+        { id: 6, to: "/music", name: "Music", icon: <FaMusic /> },
+        { id: 7, to: "/video", name: "Video", icon: <FaVideo /> },
+        { id: 8, to: "/settings", name: "Settings", icon: <FaGear /> }
       ]
     },
 
@@ -144,13 +153,20 @@ let store = {
     } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
       this._state.dialogsPage.newMessageBody = action.messageBody;
       this._callSubscriber(this._state);
+    } else if (action.type === SEND_MESSAGE) {
+      let messageBody = this._state.dialogsPage.newMessageBody;
+      this._state.dialogsPage.newMessageBody = '';
+      this._state.dialogsPage.messagesData.push({ id: 5, message: messageBody});
+      this._callSubscriber(this._state);
     }
   }
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
 
-export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
+export const updateNewMessageBodyCreator = (message) => ({ type: UPDATE_NEW_MESSAGE_BODY, messageBody: message });
 
 
 window.store = store;

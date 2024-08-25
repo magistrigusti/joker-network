@@ -33,7 +33,7 @@ const News = () => {
 
       <ul>
         {articles.map((article, index) => (
-          <li key={index}>
+          <li className={style.news_item} key={index}>
             <h3 className={style.news_title}>{article.title}</h3>
             <p>{article.description}</p>
             <a className={style.news_link} href={article.url} target="_blank" rel="noopener noreferrer">Read More</a>
