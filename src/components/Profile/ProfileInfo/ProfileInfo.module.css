@@ -23,11 +23,13 @@
 
 .years p {
   margin-right: 10px;
+  font-family: "Moderustic", sans-serif;
 }
 
 .about_wrapper {
   font-size: 38px;
   padding-right: 20px;
+  font-family: "Moderustic", sans-serif;
 }
 
 .about {

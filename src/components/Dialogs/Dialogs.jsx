@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './Dialogs.module.css';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/state';
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 import DialogItem from "./DialogItem/DialogItem";
-// import { Routes, Route } from 'react-router-dom';
 import Messages from './Messages/Messages';
 
 

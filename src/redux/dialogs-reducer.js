@@ -2,14 +2,22 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
 const dialogsReducer = (state, action) => {
-  if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-    this._state.dialogsPage.newMessageBody = action.messageBody;
-    this._callSubscriber(this._state);
-  } else if (action.type === SEND_MESSAGE) {
-    let messageBody = this._state.dialogsPage.newMessageBody;
-    this._state.dialogsPage.newMessageBody = '';
-    this._state.dialogsPage.messagesData.push({ id: 5, message: messageBody});
-    this._callSubscriber(this._state);
+  switch (action.type) {
+    case UPDATE_NEW_MESSAGE_BODY:
+      state.newMessageBody = action.messageBody;
+      return state;
+    case SEND_MESSAGE:
+      let messageBody = state.newMessageBody;
+      state.newMessageBody = '';
+      state.messagesData.push({ id: 5, message: messageBody });
+      return state;
+    default:
+      return state;
   }
-  return state;
-}
+
+};
+
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
+export const updateNewMessageBodyCreator = (message) => ({ type: UPDATE_NEW_MESSAGE_BODY, messageBody: message });
+
+export default dialogsReducer;

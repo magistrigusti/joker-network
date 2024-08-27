@@ -1,14 +1,14 @@
 import React from 'react';
 import style from './Posts.module.css';
 import MyPosts from './MyPosts/MyPosts';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../redux/posts-reducer';
 
 
 
 //props=postsPage
 const Posts = (props) => {
   let postsElements = props.postsPage.postsData.map(
-    post => <MyPosts message={post.message} like={post.likeCount} />
+    post => <MyPosts key={post.id} message={post.message} like={post.likeCount} />
   );
 
   let newPostElement = React.createRef();

@@ -1,7 +1,7 @@
 .nav {
   grid-area: nav;
   position: relative;
-  background-image: linear-gradient(90deg, #00d4ff 0%, #090979 65%, #020024 100%);
+  background-image: linear-gradient(90deg, #00d4ff 0%, #038fd1 100%);
   width: 230px;
   transition: width 0.3s;
   padding-top: 70px;
@@ -20,6 +20,8 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: white;
+  padding-left: 170px;
 }
 
 .toggle_btn {
