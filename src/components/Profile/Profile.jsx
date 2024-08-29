@@ -15,9 +15,12 @@ const Profile = (props) => {
 
   return (
     <div className={style.profile_wrapper}>
-      <ProfileInfo profile={props.profile} />
       <div>
-        <div>my foto</div>
+        <ProfileInfo profile={props.profile} />
+      </div>
+      
+      <div>
+        <div className={style.title_photo}>my foto</div>
         {fotoElements}
       </div>
     </div>

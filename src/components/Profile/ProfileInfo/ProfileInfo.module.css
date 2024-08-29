@@ -1,3 +1,8 @@
+.profileInfo_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .avatar {
   width: 120px;
@@ -8,7 +13,7 @@
 .name {
   font-weight: 400;
   margin: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
   font-family: "Rye", serif;
   letter-spacing: 4px;
   color: #EE914A;
@@ -17,16 +22,28 @@
 .years { 
   display: flex;
   align-items: center;
+  text-align: center;
   margin-left: 10px;
-  font-size: 34px;
+  font-size: 28px;
+  margin-top: 0;
 }
 
 .years p {
   margin-right: 10px;
-  font-family: "Moderustic", sans-serif;
+  margin-top: 5px;
+}
+
+.years span {
+  margin-top: -18px;
+ 
 }
 
 .about_wrapper {
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.about_item {
   font-size: 38px;
   padding-right: 20px;
   font-family: "Moderustic", sans-serif;
@@ -37,7 +54,7 @@
   padding-bottom: 20px;
 }
 
-.status_wrapper {
+.status_item {
   margin-bottom: 20px;
   font-size: 38px;
 }

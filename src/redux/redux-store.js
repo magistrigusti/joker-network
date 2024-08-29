@@ -4,6 +4,8 @@ import dialogsReducer from './dialogs-reducer';
 import sidebarReducer from './sidebar-reducer';
 import profileReducer from './profile-reducer';
 import friendsReducer from './friends-reducer';
+import musicReducer from './music-reducer';
+import videoReducer from './video-reducer';
 
 // Комбинируем редюсеры
 const rootReducer = combineReducers({
@@ -12,6 +14,8 @@ const rootReducer = combineReducers({
   dialogsPage: dialogsReducer,
   friendsPage: friendsReducer,
   sidebarPage: sidebarReducer,
+  videoPage: videoReducer,
+  musicPage: musicReducer,
 });
 
 // Создаем хранилище

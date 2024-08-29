@@ -15,6 +15,9 @@
 
 .news_wrapper p {
   color: white;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 400;
 }
 
 .news_wrapper ul {
@@ -28,6 +31,7 @@
   padding: 10px;
   text-decoration: none;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .news_item:hover {

@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Friends.module.css';
 import FriendItem from './FriendItem/FriendItem';
 
+
 const Friends = ({ state }) => {
   let friendsElements = state.usersData.map(friend => 
     <FriendItem id={friend.id} 

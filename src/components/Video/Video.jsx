@@ -1,9 +1,13 @@
 import React from 'react';
 import style from './Video.module.css';
 import VideoBtn from './VideoBtn/VideoBtn';
+import VideoItem from './VideoItem/VideoItem';
 
 const Video = ({ state }) => {
   let videoBtnElements = state.videoBtnData.map(video => <VideoBtn name={video.name} />);
+  let videoItemsElements = state.videoData.map(
+    video => <VideoItem id={video.id} name={video.name} director={video.director} year={video.year} />
+  );
 
   return (
     <div className={style.video_wrapper}>
@@ -11,6 +15,9 @@ const Video = ({ state }) => {
         {videoBtnElements}
       </div>
       Videos
+      <div className={style.video_content}>
+        {videoItemsElements}
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 .profile_wrapper {
-  display: flex;
+  display: block;
   position: relative;
   color: rgb(255, 255, 255);
   width: 100%;
@@ -8,9 +8,14 @@
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
   padding-left: 40px;
-  padding-top: 20px;
+  padding-top: 10px;
   border-radius: 10px;
   z-index: 1;
+}
+
+.title_photo {
+  text-align: center;
+  font-size: 34px;
 }
 
 

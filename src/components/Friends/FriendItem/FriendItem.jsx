@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './FriendItem.module.css';
 import { MdDeleteForever } from "react-icons/md";
+import { FaMessage } from "react-icons/fa6";
 
 const FriendItem = (props) => {
   return (
@@ -10,7 +11,8 @@ const FriendItem = (props) => {
       <div className={style.friend_status}>{props.status}</div>
       <div className={style.friend_country}>{props.country}</div>
       <div className={style.friend_city}>{props.city}</div>
-      <MdDeleteForever />
+      <FaMessage className={style.icon} />
+      <MdDeleteForever className={style.icon} />
     </div>
   )
 }
