@@ -6,12 +6,13 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 1.5fr 10fr;
   margin: 0 auto;
+  height: 100%;
 }
 
 .background_container {
   grid-area: content;
   position: relative;
-  height: 100vh;
+  height: 100%;
   /* background-image: url("./img/img-content.jpg"); */
   background: linear-gradient(90deg, #038fd1 0%, rgba(9,9,121,1) 40%, rgba(2,0,36,1) 100%);
   background-size: cover;

@@ -4,6 +4,8 @@ import myfoto2 from '../img/myfoto-2.png';
 import myfoto3 from '../img/myfoto-3.png';
 import myfoto4 from '../img/myfoto-4.png';
 import myAvatar from "../img/avatar.png";
+import myfoto5 from "../img/myfoto-5.png";
+import myforo6 from "../img/myfoto-6.png";
 
 const profileSlice = createSlice({
   name: 'profile',
@@ -20,6 +22,8 @@ const profileSlice = createSlice({
         { id: 2, name: myfoto2 },
         { id: 3, name: myfoto1 },
         { id: 4, name: myfoto4 },
+        { id: 5, name: myfoto5 },
+        { id: 6, name: myforo6 },
       ]
 
     },

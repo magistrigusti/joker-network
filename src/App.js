@@ -31,11 +31,7 @@ const App = () => {
           <Routes>
             <Route path="/profile" element={<Profile profile={profileState.profile} />} />
             <Route path="/posts" element={
-              <Posts 
-                profile={profileState.profile}
-                postsPage={postsState}
-                dispatch={dispatch} // Передаем dispatch
-              />} />
+              <Posts postsPage={postsState} dispatch={dispatch} />} />
             <Route path="/friends" element={<Friends state={friendsState} />} />
             <Route path="/dialogs" element={<Dialogs state={dialogsState} dispatch={dispatch} />} />
             <Route path="/news" element={<News />} />
