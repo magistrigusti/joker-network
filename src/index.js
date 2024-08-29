@@ -1,27 +1,19 @@
 import React from 'react';
-import ReactDom from 'react-dom/client';
-import { BrowserRouter } from'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './redux/store';
+import store from './redux/redux-store';
+import { Provider } from 'react-redux'; // Импортируем Provider
 
-const root = ReactDom.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state) => {
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <App state={state}  dispatch={store.dispatch.bind(store)} store={store} />
-      </BrowserRouter>
-    </React.StrictMode>
-  )
-}
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-rerenderEntireTree(store.getState());
-
-store.subscribe(rerenderEntireTree);
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}> {/* Оборачиваем приложение в Provider */}
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+);

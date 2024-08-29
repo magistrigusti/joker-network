@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -8,36 +8,37 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Posts from './components/Posts/Posts';
 import Friends from './components/Friends/Friends';
 import News from './components/News/News';
-import Music from './components/Music/Music';
-import Video from './components/Video/Video';
+// import Music from './components/Music/Music';
+// import Video from './components/Video/Video';
+import { useSelector, useDispatch } from 'react-redux'; // Импортируем хуки
 
-
-
-const App = (props) => {
+const App = () => {
+  const sidebarState = useSelector(state => state.sidebarPage);
+  const profileState = useSelector(state => state.profilePage);
+  const postsState = useSelector(state => state.postsPage);
+  const friendsState = useSelector(state => state.friendsPage);
+  const dialogsState = useSelector(state => state.dialogsPage);
+  const dispatch = useDispatch(); // Получаем dispatch из хука
 
   return (
     <div className="app-wrapper">
       <Header />
-      <NavBar state={props.state.sidebarPage} />
-      <div className="background_container ">
+      <NavBar state={sidebarState} />
+      <div className="background_container">
         <div className="text_overlay">
           <Routes>
-            <Route path="/profile" element={<Profile profile={props.state.profilePage.profile} />} />
+            <Route path="/profile" element={<Profile profile={profileState.profile} />} />
             <Route path="/posts" element={
               <Posts 
-                profile={props.state.profilePage.profile}
-                postsPage={props.state.postsPage} 
-                dispatch={props.dispatch} 
+                profile={profileState.profile}
+                postsPage={postsState}
+                dispatch={dispatch} // Передаем dispatch
               />} />
-            <Route path="/friends" element={<Friends state={props.state.friendsPage} />} />
-            <Route path="/dialogs" element={<Dialogs 
-              // state={props.state.dialogsPage} 
-              dispatch={props.dispatch}
-              store={props.store}
-            />} />
+            <Route path="/friends" element={<Friends state={friendsState} />} />
+            <Route path="/dialogs" element={<Dialogs state={dialogsState} dispatch={dispatch} />} />
             <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music state={props.state.musicPage} />} />
-            <Route path="/video" element={<Video state={props.state.videoPage} />} />
+            {/* <Route path="/music" element={<Music state={musicPage} />} />
+            <Route path="/video" element={<Video state={videoPage} />} /> */}
           </Routes>
         </div>
       </div>
@@ -45,8 +46,6 @@ const App = (props) => {
   );
 }
 
-
-
-
-
 export default App;
+
+

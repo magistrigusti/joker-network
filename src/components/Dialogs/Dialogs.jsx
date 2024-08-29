@@ -1,58 +1,57 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import style from './Dialogs.module.css';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
+import { updateNewMessageBody, sendMessage } from '../../redux/dialogs-reducer';
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from './Messages/Messages';
 
+const Dialogs = () => {
+  const state = useSelector(state => state.dialogsPage);
+  const dispatch = useDispatch();
 
-const Dialogs = (props) => {
+  const messagesElements = state.messagesData.map(message => (
+    <Messages key={message.id} message={message.message} />
+  ));
+  const dialogsElements = state.usersData.map(dialog => (
+    <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} avatar={dialog.avatar} />
+  ));
+  const newMessageBody = state.newMessageBody;
 
-  let state = props.store.getState().dialogsPage;
+  const handleMessageClick = () => {
+    dispatch(sendMessage());
+  };
 
-  let messagesElements = state.messagesData.map(message => <Messages message={message.message} />);
-  let dialogsElements = state.usersData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar} />);
-  let newMessageBody = state.newMessageBody;
-
-  let onMessageClick = () => {
-    props.store.dispatch(sendMessageCreator())
-  }
-
-  let onNewMesssageChange = (event) => {
-    let message = event.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(message))
-  }
+  const handleNewMessageChange = (event) => {
+    dispatch(updateNewMessageBody(event.target.value));
+  };
 
   return (
     <div className={style.dialogs}>
-
       <div className={style.dialogs_item}>
         {dialogsElements}
       </div>
-
       <div className={style.messages}>
         <div>
           {messagesElements}
         </div>
-
         <div className={style.new_message_wrapper}>
           <div>
-            <textarea className={style.imput_message}
-              value={ newMessageBody }
-              onChange={ onNewMesssageChange }
-              placeholder="write your message">
-            </textarea>
+            <textarea
+              className={style.imput_message}
+              value={newMessageBody}
+              onChange={handleNewMessageChange}
+              placeholder="Write your message"
+            />
           </div>
-
           <div>
-            <button className={style.send_message}
-              onClick={ onMessageClick }
-            >Send</button>
+            <button className={style.send_message} onClick={handleMessageClick}>
+              Send
+            </button>
           </div>
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dialogs; 
+export default Dialogs;
