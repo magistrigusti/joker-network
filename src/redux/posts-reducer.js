@@ -11,7 +11,7 @@ const postsSlice = createSlice({
     newPostText: 'Joker',
   },
   reducers: {
-    addPost(state) {
+    addPostText(state) {
       const newPost = {
         id: state.postsData.length + 1,
         message: state.newPostText,
@@ -26,7 +26,7 @@ const postsSlice = createSlice({
   },
 });
 
-export const { addPost, updateNewPostText } = postsSlice.actions;
+export const { addPostText, updateNewPostText } = postsSlice.actions;
 export default postsSlice.reducer;
 
 

@@ -1,38 +1,40 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import style from './Posts.module.css';
 import MyPosts from './MyPosts/MyPosts';
-import { addPost, updateNewPostText } from '../../redux/posts-reducer';
 
-const Posts = () => {
-  const postsState = useSelector(state => state.postsPage);
-  const profile = useSelector(state => state.profilePage.profile);
-  const dispatch = useDispatch();
-
-  const postsElements = postsState.postsData.map(post => (
-    <MyPosts key={post.id} message={post.message} like={post.likeCount} />
+const Posts = (props) => {
+  const postsElements = props.posts.map(post => (
+    <MyPosts key={post.id} message={post.message} like={post.likeCount} photos={props.profile.photos} />
   ));
 
+  const newPostElement = React.createRef();
+
   const handleAddPost = () => {
-    dispatch(addPost());
+    props.addPost();
   };
 
-  const handlePostChange = (event) => {
-    dispatch(updateNewPostText(event.target.value));
+  const handlePostChange = () => {
+    const text = newPostElement.current.value;
+    props.updateNewPostText(text);
   };
 
   return (
     <div className={style.post_wrapper}>
       <div className={style.new_post}>
-        <img className={style.avatar} src={profile.photos.avatar} alt="" />
+        <img
+          className={style.avatar}
+          src={props.profile?.photos?.avatar || 'default-avatar-url.jpg'}
+          alt="avatar"
+        />
         <h5 className={style.new_post_title}>New post</h5>
         <div>
           <textarea
             className={style.input}
             onChange={handlePostChange}
             placeholder="Write your post"
-            value={postsState.newPostText}
-          ></textarea>
+            value={props.newPostText}
+            ref={newPostElement}
+          />
         </div>
         <div>
           <button className={style.post_button} onClick={handleAddPost}>

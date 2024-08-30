@@ -25,7 +25,6 @@ const profileSlice = createSlice({
         { id: 5, name: myfoto5 },
         { id: 6, name: myforo6 },
       ]
-
     },
     status: "I'm looking for new opportunities",
   },
