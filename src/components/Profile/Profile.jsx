@@ -22,7 +22,7 @@ const Profile = (props) => {
         <ProfileInfo profile={profile} />
       </div>
       
-      <div>
+      <div className={style.wrapper_photo}>
         <div className={style.title_photo}>my foto</div>
         {fotoElements}
       </div>

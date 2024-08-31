@@ -62,3 +62,30 @@
 .status {
   color: rgb(141, 20, 20);
 }
+
+@media (max-width: 280px) {
+  .profileInfo_wrapper {
+    display: flex; /* Показываем навигацию в шапке на мобильных */
+    flex-direction: column;
+    justify-content:flex-end;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-weight: 400;
+    margin: 5px;
+    letter-spacing: 2px;
+    font-size: 28px;
+  }
+
+  .years { 
+    margin-left: 10px;
+    font-size: 24px;
+  }
+  
+}

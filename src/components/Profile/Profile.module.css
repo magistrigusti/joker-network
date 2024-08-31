@@ -18,6 +18,17 @@
   font-size: 34px;
 }
 
+@media (max-width: 400px) {
+  .profile_wrapper {
+    display: flex; /* Показываем навигацию в шапке на мобильных */
+    flex-direction: column;
+    width: 100%;
+  }
+
+
+  
+}
+
 
 
 

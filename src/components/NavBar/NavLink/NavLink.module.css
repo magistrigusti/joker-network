@@ -5,22 +5,34 @@
 }
 
 .item a {
-  font-size: 28px;
-  letter-spacing: 2px;
+  font-size: 18px;
+  letter-spacing: 1px;
   font-family: "Gorditas", serif;
-  /* color: rgb(87, 225, 197); */
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
 }
 
-.item .active {
+.item a.active {
   color: #EE914A;
-}
-
-.item:last-child {
-  padding-top: 60px;
 }
 
 .icon {
   padding-right: 10px;
+  font-size: 24px;
 }
+
+.name {
+  /* Дополнительные стили для названий */
+}
+
+.navCollapsed .name {
+  display: none; /* Скрываем названия при свернутом сайдбаре */
+}
+
+.navExpanded .icon {
+  display: none; /* Скрываем иконки при развернутом сайдбаре */
+}
+

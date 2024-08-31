@@ -23,7 +23,7 @@ const Posts = (props) => {
       <div className={style.new_post}>
         <img
           className={style.avatar}
-          src={props.profile?.photos?.avatar || 'default-avatar-url.jpg'}
+          src={props.profile?.photos?.avatar}
           alt="avatar"
         />
         <h5 className={style.new_post_title}>New post</h5>

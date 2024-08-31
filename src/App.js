@@ -10,6 +10,7 @@ import Friends from './components/Friends/Friends';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Video from './components/Video/Video';
+import Home from './components/Home/Home';
 import { useSelector } from 'react-redux'; // Импортируем хуки
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <div className="background_container">
         <div className="text_overlay">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile profile={profileState.profile} />} />
             <Route path="/posts" element={<PostsContainer  posts={postsState.posts} />} />
             <Route path="/friends" element={<Friends state={friendsState} />} />

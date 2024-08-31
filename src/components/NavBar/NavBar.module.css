@@ -2,19 +2,15 @@
   grid-area: nav;
   position: relative;
   background-image: linear-gradient(90deg, #00d4ff 0%, #038fd1 100%);
-  height: 97%;
-  width: 230px;
-  transition: width 0.3s;
+  height: 100vh; /* Полная высота окна */
+  width: 230px; /* Начальная ширина сайдбара */
+  transition: width 0.3s ease; /* Плавное изменение ширины */
   padding-top: 70px;
 }
 
-.sidebar.collapsed {
-  width: 60px;
-}
-
-.nav.collapsed {
-  width: 60px;
-}
+/* .nav.collapsed {
+  width: 60px; 
+} */
 
 .toggleButton {
   background: none;
@@ -22,11 +18,22 @@
   font-size: 24px;
   cursor: pointer;
   color: white;
-  padding-left: 170px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .toggle_btn {
   background: none;
   cursor: pointer;
 }
+
+@media (max-width: 400px) {
+  .nav {
+    display: none; /* Скрываем сайдбар на мобильных устройствах */
+  }
+}
+
+
 

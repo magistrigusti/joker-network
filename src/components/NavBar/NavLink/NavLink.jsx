@@ -2,21 +2,21 @@ import React from 'react';
 import style from './NavLink.module.css';
 import { NavLink } from 'react-router-dom';
 
-
-
-const Nav = (props) => {
+const Nav = ({ to, name, icon, isCollapsed }) => {
   return (
     <div className={style.item}>
-      <div className={`${style.sidebar} ${props.isCollapsed ? style.collapsed : ''}`}>
-      <NavLink className={({ isActive }) => isActive ? `${style.active}` : ''} 
-        key={props.id}
-        to={props.to} >
-          <span className={style.icon}>{props.icon}</span>
-          {!props.isCollapsed && props.name}
+      <NavLink 
+        className={({ isActive }) => isActive ? `${style.active}` : ''} 
+        to={to}
+      >
+        {isCollapsed ? (
+          <span className={`${style.icon}`}>{icon}</span>
+        ) : (
+          <span className={`${style.name}`}>{name}</span>
+        )}
       </NavLink>
-      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Nav;

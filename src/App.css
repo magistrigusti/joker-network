@@ -4,20 +4,30 @@
     "header header"
     "nav content";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 1.5fr 10fr;
+  grid-template-columns: 230px 1fr; /* Начальная ширина сайдбара */
   margin: 0 auto;
-  height: 100%;
+  height: 100vh; /* Полная высота окна */
+  transition: grid-template-columns 0.3s ease; /* Плавный переход ширины */
+}
+
+.nav.collapsed ~ .content {
+  grid-template-columns: 60px 1fr; /* Уменьшаем сайдбар */
 }
 
 .background_container {
   grid-area: content;
   position: relative;
   height: 100%;
-  /* background-image: url("./img/img-content.jpg"); */
+  width: 100%;
   background: linear-gradient(90deg, #038fd1 0%, rgba(9,9,121,1) 40%, rgba(2,0,36,1) 100%);
   background-size: cover;
   background-position: center;
   padding: 20px;
+  transition: padding-left 0.3s ease; /* Плавное изменение отступа */
+}
+
+.background_container.collapsed {
+  padding-left: 60px; /* Увеличиваем отступ, когда сайдбар свернут */
 }
 
 .background_container::before {
@@ -27,24 +37,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 0.5); */
   z-index: 0;
 }
 
 .text_overlay {
   position: relative;
-  /* color: rgb(255, 255, 255); */
   width: 90%;
   height: 100%;
   font-size: 2em;
   font-family: "Rye", serif;
-  /* background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%); */
   padding-left: 40px;
   padding-top: 20px;
   border-radius: 10px;
   z-index: 1;
 }
+
+@media (max-width: 400px) {
+  .app-wrapper {
+    grid-template-areas:
+      "header"
+      "content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
+  }
+  
+  .background_container {
+    padding: 10px;
+  }
+}
+
+
 
 /* font-family: "Matemasie", sans-serif; */
 /* font-family: "Mochiy Pop One", sans-serif; */
