@@ -10,3 +10,18 @@
   max-height: 150px;
   max-width: 150px;
 }
+
+@media (max-width: 430px) {
+  .my_fotos {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0;
+  }
+
+  .my_fotos img {
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}

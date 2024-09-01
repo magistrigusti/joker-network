@@ -21,6 +21,7 @@ const ProfileInfo = (props) => {
         </div>
         <div className={style.status_item}>
           <span>Status: </span>
+          <br />
           <span className={style.status}>{props.profile.userStatus}</span>
         </div>
       </div>

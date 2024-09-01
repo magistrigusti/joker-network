@@ -1,11 +1,15 @@
 .header {
-  grid-area: header;
+  position: fixed; /* Фиксируем шапку */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 47%, rgba(2,0,36,1) 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 47%, rgba(2,0,36,1) 100%);
   padding: 10px 20px;
-  z-index: 2;
+  z-index: 2; /* Обеспечиваем, что шапка будет поверх сайдбара и контента */
 }
 
 .header_logo img {
@@ -13,26 +17,17 @@
 }
 
 .header_nav {
-  display: none; /* Скрываем навигацию на десктопе */
-}
-
-.header_nav.active {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .header_nav {
-    display: flex; /* Показываем навигацию в шапке на мобильных */
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .header_nav .name {
-    display: none; /* Скрываем названия разделов в шапке */
+    display: none; /* Скрываем иконки в шапке на мобильных устройствах */
   }
 }
+
 
 
 

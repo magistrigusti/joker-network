@@ -1,5 +1,5 @@
 .item {
-  margin: 20px 10px;  
+  margin: 20px 10px;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -7,7 +7,6 @@
 .item a {
   font-size: 18px;
   letter-spacing: 1px;
-  font-family: "Gorditas", serif;
   color: white;
   text-decoration: none;
   display: flex;
@@ -16,23 +15,23 @@
 }
 
 .item a.active {
-  color: #EE914A;
+  color: #EE914A; /* Цвет для активного элемента */
 }
 
 .icon {
-  padding-right: 10px;
   font-size: 24px;
 }
 
 .name {
-  /* Дополнительные стили для названий */
+  display: block;
 }
 
-.navCollapsed .name {
-  display: none; /* Скрываем названия при свернутом сайдбаре */
-}
+@media (max-width: 430px) {
+  .name {
+    display: none; /* Скрываем имена на мобильных */
+  }
 
-.navExpanded .icon {
-  display: none; /* Скрываем иконки при развернутом сайдбаре */
+  .icon {
+    display: block; /* Отображаем иконки на мобильных */
+  }
 }
-

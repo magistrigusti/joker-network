@@ -1,17 +1,14 @@
+/* Общее оформление */
 .app-wrapper {
   display: grid;
   grid-template-areas:
     "header header"
     "nav content";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 230px 1fr; /* Начальная ширина сайдбара */
+  grid-template-columns: 230px 1fr; /* Ширина сайдбара по умолчанию */
   margin: 0 auto;
   height: 100vh; /* Полная высота окна */
-  transition: grid-template-columns 0.3s ease; /* Плавный переход ширины */
-}
-
-.nav.collapsed ~ .content {
-  grid-template-columns: 60px 1fr; /* Уменьшаем сайдбар */
+  overflow: hidden; /* Скрываем переполнение для сайдбара */
 }
 
 .background_container {
@@ -22,22 +19,8 @@
   background: linear-gradient(90deg, #038fd1 0%, rgba(9,9,121,1) 40%, rgba(2,0,36,1) 100%);
   background-size: cover;
   background-position: center;
-  padding: 20px;
-  transition: padding-left 0.3s ease; /* Плавное изменение отступа */
-}
+  padding: 40px;
 
-.background_container.collapsed {
-  padding-left: 60px; /* Увеличиваем отступ, когда сайдбар свернут */
-}
-
-.background_container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
 }
 
 .text_overlay {
@@ -52,19 +35,49 @@
   z-index: 1;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .app-wrapper {
     grid-template-areas:
       "header"
       "content";
     grid-template-columns: 1fr;
     grid-template-rows: 60px 1fr;
+    height: 100%;
   }
-  
+
   .background_container {
-    padding: 10px;
+    grid-area: content;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+  
+  }
+
+  .text_overlay {
+    position: relative;
+    width: 65%;
+    height: 100%;
+    font-size: 1em;
+    font-family: "Rye", serif;
+    padding-left: 40px;
+    padding-top: 5px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  .nav {
+    width: 80px; /* Ширина сайдбара на мобильных устройствах */
+  }
+
+  .nav.collapsed {
+    display: none; /* Убираем сайдбар при нажатии на иконку на мобильных */
+  }
+
+  .header_nav {
+    display: none; /* Иконки в шапке скрываем на мобильных */
   }
 }
+
 
 
 

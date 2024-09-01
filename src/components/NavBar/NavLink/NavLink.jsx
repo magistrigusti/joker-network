@@ -10,9 +10,9 @@ const Nav = ({ to, name, icon, isCollapsed }) => {
         to={to}
       >
         {isCollapsed ? (
-          <span className={`${style.icon}`}>{icon}</span>
+          <span className={style.icon}>{icon}</span> // Иконки на мобильных
         ) : (
-          <span className={`${style.name}`}>{name}</span>
+          <span className={style.name}>{name}</span> // Имена на веб
         )}
       </NavLink>
     </div>

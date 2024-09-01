@@ -1,39 +1,44 @@
 .nav {
-  grid-area: nav;
-  position: relative;
+  position: fixed; /* Фиксируем сайдбар */
+  top: 60px; /* Позиционируем под шапкой */
+  left: 0;
+  height: calc(100vh - 60px); /* Вычитаем высоту шапки */
+  width: 230px; /* Ширина сайдбара по умолчанию */
   background-image: linear-gradient(90deg, #00d4ff 0%, #038fd1 100%);
-  height: 100vh; /* Полная высота окна */
-  width: 230px; /* Начальная ширина сайдбара */
-  transition: width 0.3s ease; /* Плавное изменение ширины */
+  transition: width 0.3s; /* Плавное изменение ширины */
   padding-top: 70px;
+  z-index: 1; /* Обеспечиваем, что сайдбар будет поверх контента */
 }
 
-/* .nav.collapsed {
-  width: 60px; 
-} */
+.nav.collapsed {
+  width: 60px; /* Ширина сайдбара в свернутом состоянии */
+}
 
-.toggleButton {
-  background: none;
-  border: none;
+.item {
+  margin: 20px 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center; /* Центрируем иконки */
+}
+
+.icon {
   font-size: 24px;
-  cursor: pointer;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-.toggle_btn {
-  background: none;
-  cursor: pointer;
+.name {
+  display: block;
 }
 
-@media (max-width: 400px) {
-  .nav {
-    display: none; /* Скрываем сайдбар на мобильных устройствах */
-  }
+.navCollapsed .name {
+  display: none; /* Скрываем названия при свернутом сайдбаре */
 }
+
+.navExpanded .icon {
+  display: none; /* Скрываем иконки при развернутом сайдбаре */
+}
+
+
+
 
 
 

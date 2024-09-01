@@ -14,8 +14,8 @@ const Header = ({ state }) => {
           <Nav 
             key={sidebar.id} 
             to={sidebar.to} 
-            icon={sidebar.icon} 
-            isCollapsed={true} // В шапке отображаем только иконки
+            icon={sidebar.icon}
+            isCollapsed={true} /* Показываем только иконки на веб-версии */
           />
         ))}
       </div>

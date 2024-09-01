@@ -63,7 +63,7 @@
   color: rgb(141, 20, 20);
 }
 
-@media (max-width: 280px) {
+@media (max-width: 430px) {
   .profileInfo_wrapper {
     display: flex; /* Показываем навигацию в шапке на мобильных */
     flex-direction: column;
@@ -86,6 +86,22 @@
   .years { 
     margin-left: 10px;
     font-size: 24px;
+  }
+
+  .about_wrapper {
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  .about_item {
+    font-size: 28px;
+    padding-right: 20px;
+    font-family: "Moderustic", sans-serif;
+  }
+
+  .status_item {
+    margin-bottom: 5px;
+    font-size: 28px;
   }
   
 }

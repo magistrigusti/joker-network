@@ -16,3 +16,20 @@
 .music_btn {
   display: flex;
 }
+
+@media (max-width: 430px) {
+  .music_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "Rye", serif;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+    padding-left: 20px;
+    margin-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+}
