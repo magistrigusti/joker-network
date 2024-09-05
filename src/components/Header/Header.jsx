@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../img/logo.png";
 import style from './Header.module.css';
 import Nav from '../NavBar/NavLink/NavLink';
+import { TonConnectButton } from "@tonconnect/ui-react";
 
 const Header = ({ state }) => {
   return (
@@ -19,6 +20,7 @@ const Header = ({ state }) => {
           />
         ))}
       </div>
+      <TonConnectButton style={{marginRight: "25px"}} /> {/* Кнопка подключения к Тону */}
     </header>
   );
 };

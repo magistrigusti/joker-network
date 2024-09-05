@@ -12,6 +12,8 @@ import Music from './components/Music/Music';
 import Video from './components/Video/Video';
 import Home from './components/Home/Home';
 import { useSelector } from 'react-redux'; // Импортируем хуки
+import { TonConnectUIProvider } from "@tonconnect/ui-react"
+
 
 const App = () => {
   const sidebarState = useSelector(state => state.sidebarPage);
@@ -23,24 +25,29 @@ const App = () => {
   const musicState = useSelector(state => state.musicPage);
 
   return (
-    <div className="app-wrapper">
-      <Header state={sidebarState} />
-      <NavBar state={sidebarState} />
-      <div className="background_container">
-        <div className="text_overlay">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile profile={profileState.profile} />} />
-            <Route path="/posts" element={<PostsContainer  posts={postsState.posts} />} />
-            <Route path="/friends" element={<Friends state={friendsState} />} />
-            <Route path="/dialogs" element={<Dialogs state={dialogsState} />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music state={musicState} />} />
-            <Route path="/video" element={<Video state={videoState} />} />
-          </Routes>
+    <TonConnectUIProvider 
+    manifestUrl = "https://ton-connect.github.io/demo-dapp-with-wallet/"
+    >
+       
+      <div className="app-wrapper">
+        <Header state={sidebarState} />
+        <NavBar state={sidebarState} />
+        <div className="background_container">
+          <div className="text_overlay">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile profile={profileState.profile} />} />
+              <Route path="/posts" element={<PostsContainer posts={postsState.posts} />} />
+              <Route path="/friends" element={<Friends state={friendsState} />} />
+              <Route path="/dialogs" element={<Dialogs state={dialogsState} />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/music" element={<Music state={musicState} />} />
+              <Route path="/video" element={<Video state={videoState} />} />
+            </Routes>
+          </div>
         </div>
       </div>
-    </div>
+    </TonConnectUIProvider>
   );
 }
 
