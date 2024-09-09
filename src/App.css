@@ -7,7 +7,7 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 230px 1fr; /* Ширина сайдбара по умолчанию */
   margin: 0 auto;
-  height: 100vh; /* Полная высота окна */
+  height: 100%; /* Полная высота окна */
   overflow: hidden; /* Скрываем переполнение для сайдбара */
 }
 

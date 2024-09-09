@@ -1,19 +1,19 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addPostText, updateNewPostText } from '../../redux/posts-reducer';
+import {  useSelector } from 'react-redux';
+import { addPostTextActionCreator, updateNewPostTextActionCreator } from '../../redux/posts-reducer';
 import Posts from './Posts';
-
-const PostsContainer = () => {
+//posts
+const PostsContainer = (props) => {
   const postsState = useSelector(state => state.postsPage);
   const profile = useSelector(state => state.profilePage.profile);
-  const dispatch = useDispatch();
 
   const addPost = () => {
-    dispatch(addPostText());
+    props.dispatch(addPostTextActionCreator());
   }
 
   const onPostChange = (text) => {
-    dispatch(updateNewPostText(text));
+    let action = updateNewPostTextActionCreator(text)
+    props.dispatch(action);
   }
 
   return (

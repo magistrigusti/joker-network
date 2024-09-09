@@ -11,7 +11,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Video from './components/Video/Video';
 import Home from './components/Home/Home';
-import { useSelector } from 'react-redux'; // Импортируем хуки
+import { useDispatch, useSelector } from 'react-redux'; // Импортируем хуки
 import { TonConnectUIProvider } from "@tonconnect/ui-react"
 
 
@@ -24,6 +24,7 @@ const App = () => {
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
 
+   const dispatch = useDispatch();
   return (
     <TonConnectUIProvider 
     manifestUrl = "https://ton-connect.github.io/demo-dapp-with-wallet/"
@@ -37,7 +38,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile profile={profileState.profile} />} />
-              <Route path="/posts" element={<PostsContainer posts={postsState.posts} />} />
+              <Route path="/posts" element={<PostsContainer posts={postsState.posts} dispatch={dispatch} />} />
               <Route path="/friends" element={<Friends state={friendsState} />} />
               <Route path="/dialogs" element={<Dialogs state={dialogsState} />} />
               <Route path="/news" element={<News />} />

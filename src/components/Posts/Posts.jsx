@@ -33,7 +33,7 @@ const Posts = (props) => {
             onChange={handlePostChange}
             placeholder="Write your post"
             value={props.newPostText}
-            ref={newPostElement}
+            ref={props.newPostElement}
           />
         </div>
         <div>
