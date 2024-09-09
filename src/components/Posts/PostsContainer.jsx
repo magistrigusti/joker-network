@@ -6,6 +6,7 @@ import Posts from './Posts';
 const PostsContainer = (props) => {
   const postsState = useSelector(state => state.postsPage);
   const profile = useSelector(state => state.profilePage.profile);
+  
 
   const addPost = () => {
     props.dispatch(addPostTextActionCreator());

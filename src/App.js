@@ -37,8 +37,8 @@ const App = () => {
           <div className="text_overlay">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile profile={profileState.profile} />} />
-              <Route path="/posts" element={<PostsContainer posts={postsState.posts} dispatch={dispatch} />} />
+              <Route path="/profile" element={<Profile profiles={profileState.profile} />} />
+              <Route path="/posts" element={<PostsContainer state={postsState.posts} dispatch={dispatch} />} />
               <Route path="/friends" element={<Friends state={friendsState} />} />
               <Route path="/dialogs" element={<Dialogs state={dialogsState} />} />
               <Route path="/news" element={<News />} />

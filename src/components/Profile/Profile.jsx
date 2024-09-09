@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 
 
 
-const Profile = (props) => {
+const Profile = () => {
   const profile = useSelector(state => state.profilePage.profile);
 
-  let fotoElements = props.profile.photosLarge.map(foto => 
+  let fotoElements = profile.photosLarge.map(foto => 
     <MyPhotos id={foto.id} foto={foto.name} 
     />
   );
