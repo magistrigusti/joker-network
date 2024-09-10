@@ -1,28 +1,25 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import style from './Dialogs.module.css';
-import { updateNewMessageBody, sendMessage } from '../../redux/dialogs-reducer';
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from './Messages/Messages';
 
-const Dialogs = () => {
-  const state = useSelector(state => state.dialogsPage);
-  const dispatch = useDispatch();
+const Dialogs = (props) => {
 
-  const messagesElements = state.messagesData.map(message => (
+  const messagesElements = props.dialogsPage.messagesData.map(message => (
     <Messages key={message.id} message={message.message} />
   ));
-  const dialogsElements = state.usersData.map(dialog => (
+  const dialogsElements = props.dialogsPage.usersData.map(dialog => (
     <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} avatar={dialog.avatar} />
   ));
-  const newMessageBody = state.newMessageBody;
+  const newMessageBody = props.dialogsPage.newMessageBody;
 
   const handleMessageClick = () => {
-    dispatch(sendMessage());
+    props.sendMessage();
   };
 
   const handleNewMessageChange = (event) => {
-    dispatch(updateNewMessageBody(event.target.value));
+    let body = event.target.value;
+    props.updateNewMessageBody(body);
   };
 
   return (

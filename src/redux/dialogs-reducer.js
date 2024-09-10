@@ -22,10 +22,10 @@ const dialogsSlice = createSlice({
     newMessageBody: ''
   },
   reducers: {
-    updateNewMessageBody(state, action) {
+    updateNewMessageBodyCreator(state, action) {
       state.newMessageBody = action.payload;
     },
-    sendMessage(state) {
+    sendMessageCreator(state) {
       const newMessage = { id: state.messagesData.length + 1, message: state.newMessageBody };
       state.messagesData.push(newMessage);
       state.newMessageBody = '';
@@ -33,5 +33,5 @@ const dialogsSlice = createSlice({
   },
 });
 
-export const { updateNewMessageBody, sendMessage } = dialogsSlice.actions;
+export const { updateNewMessageBodyCreator, sendMessageCreator } = dialogsSlice.actions;
 export default dialogsSlice.reducer;

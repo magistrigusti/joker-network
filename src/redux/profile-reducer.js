@@ -1,3 +1,4 @@
+// profile-reducer.js
 import { createSlice } from '@reduxjs/toolkit';
 import myfoto1 from '../img/myfoto-1.png';
 import myfoto2 from '../img/myfoto-2.png';
@@ -38,3 +39,5 @@ const profileSlice = createSlice({
 export const { updateStatus } = profileSlice.actions;
 
 export default profileSlice.reducer;
+
+

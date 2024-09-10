@@ -3,15 +3,16 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
-import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import ProfileContainer from './components/Profile/Profile';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import PostsContainer from './components/Posts/PostsContainer';
 import Friends from './components/Friends/Friends';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Video from './components/Video/Video';
 import Home from './components/Home/Home';
-import { useDispatch, useSelector } from 'react-redux'; // Импортируем хуки
+import Settings from './components/Settings/Settings';
+import { useSelector } from 'react-redux'; // Импортируем хуки
 import { TonConnectUIProvider } from "@tonconnect/ui-react"
 
 
@@ -24,7 +25,7 @@ const App = () => {
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
 
-   const dispatch = useDispatch();
+   
   return (
     <TonConnectUIProvider 
     manifestUrl = "https://ton-connect.github.io/demo-dapp-with-wallet/"
@@ -37,13 +38,14 @@ const App = () => {
           <div className="text_overlay">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile profiles={profileState.profile} />} />
-              <Route path="/posts" element={<PostsContainer state={postsState.posts} dispatch={dispatch} />} />
+              <Route path="/profile" element={<ProfileContainer profileState={profileState.profile} />} />
+              <Route path="/posts" element={<PostsContainer state={postsState.posts} />} />
               <Route path="/friends" element={<Friends state={friendsState} />} />
-              <Route path="/dialogs" element={<Dialogs state={dialogsState} />} />
+              <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<Music state={musicState} />} />
               <Route path="/video" element={<Video state={videoState} />} />
+              <Route path="/settings" element={<Settings />} />
             </Routes>
           </div>
         </div>
