@@ -1,7 +1,5 @@
 .dialogs {
-  display: grid;
-  grid-template-columns: 4fr 9fr;
-  padding-bottom: 10px;
+  
 
   position: relative;
   width: 100vh;
@@ -11,6 +9,23 @@
   padding-top: 20px;
   border-radius: 10px;
   z-index: 1;
+  
+}
+
+.title {
+  color: rgb(13, 94, 8);
+  text-align: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dialogs_wrapper {
+  display: grid;
+  grid-template-columns: 4fr 9fr;
+  padding-bottom: 10px;
 }
 
 .dialogs_item {

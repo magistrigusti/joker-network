@@ -11,10 +11,11 @@ const Video = ({ state }) => {
 
   return (
     <div className={style.video_wrapper}>
+      <h4 className={style.title}>Video</h4>
       <div className={style.video_btn}>
         {videoBtnElements}
       </div>
-      Videos
+      
       <div className={style.video_content}>
         {videoItemsElements}
       </div>

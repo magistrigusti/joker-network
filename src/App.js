@@ -12,6 +12,7 @@ import MusicContainer from './layout/Music/MusicContainer';
 import VideoContainer from './layout/Video/VideoContainer';
 import Home from './layout/Home/Home';
 import Settings from './layout/Settings/Settings';
+import GroupsContainer from './layout/Groups/GgroupsContainer';
 import { useSelector } from 'react-redux'; // Импортируем хуки
 import { TonConnectUIProvider } from "@tonconnect/ui-react"
 
@@ -42,6 +43,7 @@ const App = () => {
               <Route path="/posts" element={<PostsContainer state={postsState.posts} />} />
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
+              <Route path="/groups" element={<GroupsContainer />} />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />

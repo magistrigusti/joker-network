@@ -16,7 +16,7 @@ const NavBar = ({ state }) => {
   return (
     <nav className={`${style.nav} ${isMobile ? style.collapsed : style.expanded}`}>
       {state.sidebarData.map(sidebar => (
-        <Nav 
+        <Nav className={style.item}
           key={sidebar.id} 
           to={sidebar.to} 
           icon={sidebar.icon}

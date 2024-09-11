@@ -24,26 +24,29 @@ const Dialogs = (props) => {
 
   return (
     <div className={style.dialogs}>
-      <div className={style.dialogs_item}>
-        {dialogsElements}
-      </div>
-      <div className={style.messages}>
-        <div>
-          {messagesElements}
+      <h4 className={style.title}>Dialogs</h4>
+      <div className={style.dialogs_wrapper}>
+        <div className={style.dialogs_item}>
+          {dialogsElements}
         </div>
-        <div className={style.new_message_wrapper}>
+        <div className={style.messages}>
           <div>
-            <textarea
-              className={style.imput_message}
-              value={newMessageBody}
-              onChange={handleNewMessageChange}
-              placeholder="Write your message"
-            />
+            {messagesElements}
           </div>
-          <div>
-            <button className={style.send_message} onClick={handleMessageClick}>
-              Send
-            </button>
+          <div className={style.new_message_wrapper}>
+            <div>
+              <textarea
+                className={style.imput_message}
+                value={newMessageBody}
+                onChange={handleNewMessageChange}
+                placeholder="Write your message"
+              />
+            </div>
+            <div>
+              <button className={style.send_message} onClick={handleMessageClick}>
+                Send
+              </button>
+            </div>
           </div>
         </div>
       </div>

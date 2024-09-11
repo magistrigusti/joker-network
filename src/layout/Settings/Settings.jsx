@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTonConnectUI, THEME } from '@tonconnect/ui-react';
+import style from './Settings.module.css';
 
 const Settings = () => {
   const tonConnectUI = useTonConnectUI(); // Сохраняем результат в переменную
@@ -25,10 +26,11 @@ const Settings = () => {
   }, [tonConnectUI, theme]);
 
   return (
-    <div>
+    <div className={style.settings_wrapper}>
+      <h4 className={style.title}>Settings</h4>
       <div>
         <p>Language</p>
-        <select value={lang} onChange={e => setLang(e.target.value)}>
+        <select className={style.select} value={lang} onChange={e => setLang(e.target.value)}>
           <option value="ru">Rus</option>
           <option value="en">Eng</option>
         </select>
@@ -36,7 +38,7 @@ const Settings = () => {
 
       <div>
         <p>Theme</p>
-        <select value={theme} onChange={e => setTheme(e.target.value)}>
+        <select className={style.select} value={theme} onChange={e => setTheme(e.target.value)}>
           <option value={THEME.DARK}>DARK</option>
           <option value={THEME.LIGHT}>LIGHT</option>
         </select>

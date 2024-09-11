@@ -1,0 +1,13 @@
+.name {
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
+}
+
+.atribute {
+  display: flex;
+}
+
+.atribute p {
+  margin-left: 15px;
+}

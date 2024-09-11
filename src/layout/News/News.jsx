@@ -29,7 +29,7 @@ const News = () => {
 
   return (
     <div className={style.news_wrapper}>
-      <p>Latest News</p>
+      <h4 className={style.title}>Latest News</h4>
 
       <ul>
         {articles.map((article, index) => (

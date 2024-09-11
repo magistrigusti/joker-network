@@ -5,12 +5,12 @@ const musicSlice = createSlice({
   initialState: {
     playlists: [
       { id: 1, nameStyle: "Pop", songs: [
-        { id: 1, name: "Song 1", artist: "Artist 1" },
-        { id: 2, name: "Song 2", artist: "Artist 2" },
+        { id: 1, name: "Song 1", artist: "DDT" },
+        { id: 2, name: "Song 2", artist: "Alisa" },
       ]},
       { id: 2, nameStyle: "Rock", songs: [
-        { id: 3, name: "Song 3", artist: "Artist 3" },
-        { id: 4, name: "Song 4", artist: "Artist 4" },
+        { id: 3, name: "Song 3", artist: "Kino" },
+        { id: 4, name: "Song 4", artist: "Aria" },
       ]},
     ],
     musicBtnData: [

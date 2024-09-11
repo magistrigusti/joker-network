@@ -11,10 +11,11 @@ const Music = ({state}) => {
 
   return (
     <div className={style.music_wrapper}>
+      <h4 className={style.title}>Music</h4>
       <div className={style.music_btn}>
         {musicBtnElements}
       </div>
-      Music
+
       <div className={style.music_item}>
         {musicItemElements}
       </div>
