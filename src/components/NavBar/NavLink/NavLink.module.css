@@ -7,7 +7,7 @@
 .item a {
   font-size: 18px;
   letter-spacing: 1px;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
 }
 
 .item a.active {
-  color: #EE914A; /* Цвет для активного элемента */
+  color: var(--text-active) /* Цвет для активного элемента */
 }
 
 .icon {

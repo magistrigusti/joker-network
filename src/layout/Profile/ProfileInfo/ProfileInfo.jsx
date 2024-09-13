@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
           <div className={style.about}>{props.profile.aboutMe}</div>
         </div>
         <div className={style.status_item}>
-          <span>Status: </span>
+          <span className={style.status_span}>Status: </span>
           <br />
           <span className={style.status}>{props.profile.userStatus}</span>
         </div>

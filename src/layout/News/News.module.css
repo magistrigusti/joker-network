@@ -6,6 +6,7 @@
   font-family: "Rye", serif;
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+  color: var(--text-color);
   padding-left: 40px;
   padding-top: 5px;
   padding-bottom: 10px;
@@ -22,7 +23,7 @@
 }
 
 .news_wrapper p {
-  color: white;
+  color: var(--text-color);
   text-align: center;
   font-size: 34px;
   font-weight: 400;
@@ -43,7 +44,7 @@
 }
 
 .news_item:hover {
-  border: 4px white solid;
+  border: 4px var(--text-active) solid;
 }
 
 .news_title {
@@ -57,7 +58,7 @@
 }
 
 .news_link {
-  color: rgb(100, 149, 237);
+  color: var(--text-page);
   text-decoration: none;
   padding-bottom: 0px;
   margin: 0;

@@ -9,7 +9,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   padding-bottom: 10px;
-  color: rgb(35, 32, 32);
+  color: var(--text-page);
 }
 
 .post_avatar {

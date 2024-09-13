@@ -7,6 +7,7 @@ import myfoto4 from '../img/myfoto-4.png';
 import myAvatar from "../img/avatar.png";
 import myfoto5 from "../img/myfoto-5.png";
 import myfoto6 from "../img/myfoto-6.png";
+import myfoto7 from '../img/myfoto-7.png';
 
 const profileSlice = createSlice({
   name: 'profile',
@@ -25,6 +26,7 @@ const profileSlice = createSlice({
         { id: 4, name: myfoto4 },
         { id: 5, name: myfoto5 },
         { id: 6, name: myfoto6 },
+        { id: 7, name: myfoto7 },
       ]
     },
     status: "I'm looking for new opportunities",

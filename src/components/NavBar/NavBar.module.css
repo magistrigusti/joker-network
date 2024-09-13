@@ -4,7 +4,8 @@
   left: 0;
   height: calc(100vh - 60px); /* Вычитаем высоту шапки */
   width: 230px; /* Ширина сайдбара по умолчанию */
-  background-image: linear-gradient(90deg, #00d4ff 0%, #038fd1 100%);
+  background: var(--background);
+  color: var(--text-color);
   transition: width 0.3s; /* Плавное изменение ширины */
   padding-top: 70px;
   z-index: 1; /* Обеспечиваем, что сайдбар будет поверх контента */

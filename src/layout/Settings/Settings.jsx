@@ -37,7 +37,7 @@ const Settings = () => {
       </div>
 
       <div>
-        <p>Theme</p>
+        <p>Theme Wallet</p>
         <select className={style.select} value={theme} onChange={e => setTheme(e.target.value)}>
           <option value={THEME.DARK}>DARK</option>
           <option value={THEME.LIGHT}>LIGHT</option>

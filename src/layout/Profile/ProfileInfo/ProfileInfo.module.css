@@ -16,7 +16,7 @@
   margin-top: 5px;
   font-family: "Rye", serif;
   letter-spacing: 4px;
-  color: #EE914A;
+
 }
 
 .years { 
@@ -31,6 +31,7 @@
 .years p {
   margin-right: 10px;
   margin-top: 5px;
+  color: #EE914A;
 }
 
 .years span {
@@ -49,8 +50,11 @@
   font-family: "Moderustic", sans-serif;
 }
 
+.about_item span {
+  color: #EE914A;
+}
+
 .about {
-  color: rgb(4, 66, 4);
   padding-bottom: 20px;
 }
 
@@ -59,8 +63,8 @@
   font-size: 38px;
 }
 
-.status {
-  color: rgb(141, 20, 20);
+.status_span {
+  color: #EE914A;
 }
 
 @media (max-width: 430px) {

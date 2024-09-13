@@ -10,11 +10,13 @@ const groupsSlice = createSlice({
   name: 'friends',
   initialState: {
     groupsData: [
-      { id: 1, name: "fuck you bill geits", subscribers: '8000000000', avatar: bill },
-      { id: 2, name: "it-kamasutra", subscribers: '23456789', avatar: kamasutra },
-      { id: 3, name: "Joker", subscribers: "899563", avatar: joker },
-      { id: 4, name: "Fagundes", subscribers: '2000', avatar: fagundes },
-      { id: 5, name: "Venera", subscribers: '3000000', avatar: venera }
+      { id: 1, name: "Fuck you Bill Geits", subscribers: '8000000000', avatar: bill },
+      { id: 2, name: "Joker", subscribers: "899563", avatar: joker },
+      { id: 3, name: "Fagundes", subscribers: '2000', avatar: fagundes },
+      { id: 4, name: "Venera", subscribers: '3000000', avatar: venera },
+      { id: 5, name: "it-kamasutra", subscribers: '23456789', avatar: kamasutra },
+      
+      
     ],
   },
   reducers: {

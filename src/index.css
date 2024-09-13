@@ -1,4 +1,22 @@
+:root {
+  --background: #0131bd;
+  --text-color: #fff;
+  --text-active: rgb(198, 170, 9);
+  --text-page: #dda9a9; 
+  --text-titrs: #9B9B9B;
+}
+
+[data-theme='dark'] {
+  --background: #02025c;
+  --text-color: #EE914A;
+  --text-page: rgb(0, 60, 128); 
+  --text-active: rgb(106, 28, 2);
+}
+
 body {
+  background: var(--background);
+  color: var(--text-color);
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,7 +26,9 @@ body {
   h1,h2,h3,h4,h5 {
     margin: 0;
     padding: 0;
-  }
+  };
+
+  
 }
 
 code {

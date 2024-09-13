@@ -1,7 +1,7 @@
 .name {
   font-size: 32px;
   font-weight: 400;
-  color: white;
+  color: var(--text-page);
 }
 
 .atribute {

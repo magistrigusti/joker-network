@@ -4,15 +4,16 @@
   display: flex;
   align-items: center;
   text-align: center;
+  font-weight: 400;
   padding: 10px;
   padding-right: 30px;
   font-family: "Mochiy Pop One", sans-serif;
   /* justify-content: space-between; */
-  color: rgb(75, 11, 172);
+  color: var(--text-color);
 }
 
 .friend_item:hover {
-  border: 3px white solid;
+  border: 3px var(--text-active) solid;
   border-radius: 15px;
   margin-right: 30px;
 }
@@ -49,14 +50,14 @@
 .friend_status {
   margin: 10px;
   font-size: 18px;
-  color: #dda9a9;
+  color: var(--text-color);
 }
 
 .icon {
   padding-left: 20px;
   padding-right: 10px;
   font-size: 28px;
-  color: white;
+  color: var(--text-page);
   cursor: pointer;
 }
 
