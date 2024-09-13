@@ -5,17 +5,22 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPhotos from './MyPhotos/MyPhotos';
 
 const Profile = (props) => {
+  const { profileState } = props;
 
-  console.log('Profile State in Profile:', props.profileState); // Добавь этот лог
+  if (!profileState) {
+    return <div>Loading...</div>;
+  }
 
-  let fotoElements = props.profileState.photosLarge.map(foto => 
+  console.log('Profile State in Profile:', profileState); // Добавь этот лог
+
+  let fotoElements = profileState.photosLarge.map(foto => 
     <MyPhotos id={foto.id} foto={foto.name} key={foto.id} />
   );
 
   return (
     <div className={style.profile_wrapper}>
       <div>
-        <ProfileInfo profile={props.profileState} />
+        <ProfileInfo profile={profileState} />
       </div>
       
       <div className={style.wrapper_photo}>
@@ -27,3 +32,5 @@ const Profile = (props) => {
 };
 
 export default Profile;
+
+

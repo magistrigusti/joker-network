@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux'; // Импортируем хуки
+import { TonConnectUIProvider } from "@tonconnect/ui-react"
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import ProfileContainer from './layout/Profile/Profile';
@@ -13,8 +15,7 @@ import VideoContainer from './layout/Video/VideoContainer';
 import Home from './layout/Home/Home';
 import Settings from './layout/Settings/Settings';
 import GroupsContainer from './layout/Groups/GgroupsContainer';
-import { useSelector } from 'react-redux'; // Импортируем хуки
-import { TonConnectUIProvider } from "@tonconnect/ui-react"
+
 
 
 const App = () => {
@@ -26,12 +27,9 @@ const App = () => {
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
 
-   
+
   return (
-    <TonConnectUIProvider 
-    manifestUrl = "https://ton-connect.github.io/demo-dapp-with-wallet/"
-    >
-       
+    <TonConnectUIProvider manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/">
       <div className="app-wrapper">
         <Header state={sidebarState} />
         <NavBar state={sidebarState} />
@@ -39,7 +37,7 @@ const App = () => {
           <div className="text_overlay">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<ProfileContainer profileState={profileState.profile} />} />
+              <Route path="/profile" element={<ProfileContainer profileState={profileState.profileData} />} />
               <Route path="/posts" element={<PostsContainer state={postsState.posts} />} />
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />

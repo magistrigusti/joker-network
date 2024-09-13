@@ -3,9 +3,9 @@ import {  useDispatch, useSelector } from 'react-redux';
 import { addPostTextActionCreator, updateNewPostTextActionCreator } from '../../redux/posts-reducer';
 import Posts from './Posts';
 //posts
-const PostsContainer = (props) => {
+const PostsContainer = () => {
   const postsState = useSelector(state => state.postsPage);
-  const profile = useSelector(state => state.profilePage.profile);
+  const profileState = useSelector(state => state.profilePage);
   const dispatch = useDispatch();
 
   const addPost = () => {
@@ -22,7 +22,7 @@ const PostsContainer = (props) => {
       updateNewPostText={onPostChange} 
       addPost={addPost} 
       posts={postsState.postsData} 
-      profile={profile} 
+      profile={profileState.profileData} 
       newPostText={postsState.newPostText}
     />
   );
