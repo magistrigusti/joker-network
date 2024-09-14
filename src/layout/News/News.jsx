@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './News.module.css';
 
@@ -23,9 +22,12 @@ const News = () => {
   }, []);
   
   if (loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
-  if (error) return <p>Error: {error}</p> 
+  
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className={style.news_wrapper}>
@@ -35,14 +37,14 @@ const News = () => {
         {articles.map((article, index) => (
           <li className={style.news_item} key={index}>
             <h3 className={style.news_title}>{article.title}</h3>
+            {article.urlToImage && <img style={{height: "200px"}} src={article.urlToImage} alt={article.title} />}
             <p>{article.description}</p>
             <a className={style.news_link} href={article.url} target="_blank" rel="noopener noreferrer">Read More</a>
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default News;
-

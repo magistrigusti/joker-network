@@ -7,6 +7,7 @@ import friendsReducer from './friends-reducer';
 import musicReducer from './music-reducer';
 import videoReducer from './video-reducer';
 import groupsReducer from './groups-reducer';
+import newsReducer from './news-reducer';
 
 // Комбинируем редюсеры
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   videoPage: videoReducer,
   musicPage: musicReducer,
   groupsPage: groupsReducer,
+  newsPage: newsReducer,
 });
 
 // Создаем хранилище
