@@ -20,11 +20,11 @@ const News = () => {
     };
     fetchNews();
   }, []);
-  
+
   if (loading) {
     return <p>Loading...</p>;
   }
-  
+
   if (error) {
     return <p>Error: {error}</p>;
   }
@@ -37,8 +37,12 @@ const News = () => {
         {articles.map((article, index) => (
           <li className={style.news_item} key={index}>
             <h3 className={style.news_title}>{article.title}</h3>
-            {article.urlToImage && <img style={{height: "200px"}} src={article.urlToImage} alt={article.title} />}
-            <p>{article.description}</p>
+            <div className={style.news_content}>
+              {article.urlToImage &&
+                <img className={style.news_img} src={article.urlToImage} alt={article.title} />
+              }
+              <p>{article.description}</p>
+            </div>
             <a className={style.news_link} href={article.url} target="_blank" rel="noopener noreferrer">Read More</a>
           </li>
         ))}

@@ -27,17 +27,17 @@ const Settings = () => {
 
   return (
     <div className={style.settings_wrapper}>
-      <h4 className={style.title}>Settings</h4>
+      <h5 className={style.title}>Settings</h5>
       <div>
-        <p>Language</p>
+        <p className={style.select_title}>Language</p>
         <select className={style.select} value={lang} onChange={e => setLang(e.target.value)}>
-          <option value="ru">Rus</option>
-          <option value="en">Eng</option>
+          <option value="ru">RUS</option>
+          <option value="en">ENG</option>
         </select>
       </div>
 
       <div>
-        <p>Theme Wallet</p>
+        <p className={style.select_title}>Theme Wallet</p>
         <select className={style.select} value={theme} onChange={e => setTheme(e.target.value)}>
           <option value={THEME.DARK}>DARK</option>
           <option value={THEME.LIGHT}>LIGHT</option>

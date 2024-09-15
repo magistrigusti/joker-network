@@ -49,11 +49,24 @@
 
 .news_title {
   font-weight: 400;
+  text-align: center;
+  color: var(--text-active);
+  font-size: 30px;
   padding-bottom: -10px;
+  padding: 0 40px 0 30px;
+}
+
+.news_content {
+  display: flex;
+}
+
+.news_img {
+  height: 150px;
 }
 
 .news_item p {
   padding-bottom: -10px;
+  font-size: 24px;
   margin: 0;
 }
 
@@ -63,4 +76,8 @@
   padding-bottom: 0px;
   margin: 0;
   padding: 0;
+}
+
+.news_link:hover {
+  color: var(--text-active);
 }

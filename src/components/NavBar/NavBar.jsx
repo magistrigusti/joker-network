@@ -20,7 +20,7 @@ const NavBar = ({ state }) => {
   return (
     <nav className={`${style.nav} ${isMobile ? style.collapsed : style.expanded}`}>
       <div>
-        <button onClick={toggleTheme}>
+        <button className={style.toggle_theme} onClick={toggleTheme}>
           {isDarkMode ? <MdLightMode /> : <MdDarkMode /> }
         </button>
       </div>

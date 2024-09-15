@@ -27,6 +27,19 @@
   font-size: 24px;
 }
 
+.toggle_theme {
+  margin: 5px;
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: transparent;
+  color: white;
+  border-radius: 50%;
+}
+
 .name {
   display: block;
 }

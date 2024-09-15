@@ -1,6 +1,6 @@
 import React from 'react';
 import Dialogs from './Dialogs';
-import {  useDispatch, useSelector } from 'react-redux';
+import {  useDispatch, useSelector, connect } from 'react-redux';
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 
 
@@ -25,5 +25,9 @@ const DialogsContainer = (props) => {
     </div>
   )
 };
+
+// let f1 = () 
+
+// const superDialgsContainer = connect() (Dialogs);
 
 export default DialogsContainer;
