@@ -10,6 +10,7 @@
   font-family: "Mochiy Pop One", sans-serif;
   /* justify-content: space-between; */
   color: var(--text-color);
+  cursor: pointer;
 }
 
 .friend_item:hover {

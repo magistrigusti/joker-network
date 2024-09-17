@@ -13,9 +13,10 @@ const SongsItem = (props) => {
 };
 
 const MusicItem = (props) => {
-  let musicSongsElements = props.songs.map(
+  // Проверяем, есть ли песни, перед вызовом map
+  let musicSongsElements = props.songs ? props.songs.map(
     song => <SongsItem key={song.id} name={song.name} artist={song.artist} />
-  );
+  ) : <p>No songs available</p>; // Отобразим сообщение, если песен нет
 
   return (
     <div className={style.music_item}>

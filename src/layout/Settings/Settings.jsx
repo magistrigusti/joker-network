@@ -43,6 +43,14 @@ const Settings = () => {
           <option value={THEME.LIGHT}>LIGHT</option>
         </select>
       </div>
+
+      <div>
+        <p className={style.select_title}>Theme NetWork</p>
+        <select className={style.select} value={theme} onChain={e => setTheme(e.target.value)}>
+          <option value='dark'>Theme Dark</option>
+          <option value="light">Theme Light</option>
+        </select>
+      </div>
     </div>
   );
 };

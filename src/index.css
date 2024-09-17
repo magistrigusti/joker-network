@@ -4,6 +4,7 @@
   --text-active: rgb(198, 170, 9);
   --text-page: #dda9a9; 
   --text-titrs: #9B9B9B;
+  --text-inactive: #EE914A;
 }
 
 [data-theme='dark'] {
@@ -11,6 +12,7 @@
   --text-color: #EE914A;
   --text-page: rgb(0, 60, 128); 
   --text-active: rgb(106, 28, 2);
+  --text-inactive: rgb(106, 28, 2);
 }
 
 body {

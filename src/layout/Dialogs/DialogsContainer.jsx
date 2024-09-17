@@ -26,8 +26,14 @@ const DialogsContainer = (props) => {
   )
 };
 
-// let f1 = () 
+// let f1 = () => {
+//   return {}
+// }
 
-// const superDialgsContainer = connect() (Dialogs);
+// let f2 = () => {
+//   return {}
+// }
+
+// const superDialgsContainer = connect(f1, f2) (Dialogs);
 
 export default DialogsContainer;

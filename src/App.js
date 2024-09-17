@@ -16,8 +16,6 @@ import Home from './layout/Home/Home';
 import Settings from './layout/Settings/Settings';
 import GroupsContainer from './layout/Groups/GgroupsContainer';
 
-
-
 const App = () => {
   const sidebarState = useSelector(state => state.sidebarPage);
   const profileState = useSelector(state => state.profilePage);

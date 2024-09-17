@@ -16,7 +16,7 @@
 .title_photo {
   text-align: center;
   font-size: 34px;
-  color: #EE914A;
+  color: var(--text-inactive);
 }
 
 @media (max-width: 430px) {

@@ -22,3 +22,21 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_title {
+  font-weight: 400;
+  color: var(--text-page);
+}
+
+.home_text {
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--text-color);
+  text-align: center;
+}

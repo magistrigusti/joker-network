@@ -9,6 +9,7 @@
   font-family: "Mochiy Pop One", sans-serif;
   justify-content: space-between;
   color: rgb(27, 35, 109);
+  cursor: pointer;
 }
 
 .items {
