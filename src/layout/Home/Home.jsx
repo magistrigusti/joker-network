@@ -3,8 +3,8 @@ import style from './Home.module.css'
 
 const Home = () => {
   return (
-    <div>
-      Home
+    <div className={style.home_wrapper}>
+      <h4 className={style.title}>Home</h4>
     </div>
   );
 };
