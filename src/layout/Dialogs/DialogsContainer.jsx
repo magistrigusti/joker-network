@@ -4,36 +4,45 @@ import {  useDispatch, useSelector, connect } from 'react-redux';
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 
 
-const DialogsContainer = (props) => {
-  const dialogsState = useSelector(state => state.dialogsPage);
-  const dispatch = useDispatch();
+// const DialogsContainer = (props) => {
+//   const dialogsState = useSelector(state => state.dialogsPage);
+//   const dispatch = useDispatch();
 
-  const handleMessageClick = () => {
-    dispatch(sendMessageCreator());
-  };
+//   const handleMessageClick = () => {
+//     dispatch(sendMessageCreator());
+//   };
 
-  const handleNewMessageChange = (body) => {
-    dispatch(updateNewMessageBodyCreator(body));
-  };
+//   const handleNewMessageChange = (body) => {
+//     dispatch(updateNewMessageBodyCreator(body));
+//   };
 
-  return (
-    <div>
-      <Dialogs dialogsPage={dialogsState}
-        updateNewMessageBody={handleNewMessageChange}
-        sendMessage={handleMessageClick}
-      />
-    </div>
-  )
-};
+//   return (
+//     <div>
+//       <Dialogs dialogsPage={dialogsState}
+//         updateNewMessageBody={handleNewMessageChange}
+//         sendMessage={handleMessageClick}
+//       />
+//     </div>
+//   )
+// };
 
-// let f1 = () => {
-//   return {}
-// }
+let mapStateToProps = (state) => {
+  return {
+    dialogsPage: state.dialogsPage
+  }
+}
 
-// let f2 = () => {
-//   return {}
-// }
+let mapDispatchToProps = (dispatch) => {
+  return {
+    updateNewMessageBody: () => {
+      dispatch(sendMessageCreator());
+    },
+    sendMessage: (body) => {
+      dispatch(updateNewMessageBodyCreator(body));
+    }
+  }
+}
 
-// const superDialgsContainer = connect(f1, f2) (Dialogs);
+const DialgsContainer = connect(mapStateToProps, mapDispatchToProps) (Dialogs);
 
-export default DialogsContainer;
+export default DialgsContainer;
