@@ -10,7 +10,6 @@ import { ThemeProvider } from './Context/ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -22,10 +21,3 @@ let rerenderEntireTree = () => {
       </BrowserRouter>
     </React.StrictMode>
   );
-}
-
-rerenderEntireTree();
-
-store.subscribe(() => {
-  rerenderEntireTree();
-});

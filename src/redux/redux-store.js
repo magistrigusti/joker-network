@@ -27,5 +27,7 @@ const store = configureStore({
   reducer: rootReducer,
 });
 
+window.store = store;
+
 export default store;
 

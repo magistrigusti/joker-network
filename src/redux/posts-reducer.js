@@ -17,10 +17,13 @@ const postsSlice = createSlice({
         message: state.newPostText,
         likeCount: 0,
       };
+
+      // Добавление нового поста в состояние
       state.postsData.push(newPost);
-      state.newPostText = '';
+      state.newPostText = ''; // Очистка поля ввода
     },
     updateNewPostTextActionCreator(state, action) {
+      // Обновление текста нового поста
       state.newPostText = action.payload;
     },
   },

@@ -19,7 +19,7 @@ const dialogsSlice = createSlice({
       { id: 3, message: "I'm fine, thank you" },
       { id: 4, message: "But I'm busy now" }
     ],
-    newMessageBody: ''
+    newMessageBody: 'How are you Joker',
   },
   reducers: {
     updateNewMessageBodyCreator(state, action) {
