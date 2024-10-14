@@ -5,6 +5,7 @@ import radmilaAvatar from '../img/radmila.png';
 import annaAvatar from '../img/anna.png';
 
 const dialogsSlice = createSlice({
+  
   name: 'dialogs',
   initialState: {
     usersData: [
@@ -19,19 +20,26 @@ const dialogsSlice = createSlice({
       { id: 3, message: "I'm fine, thank you" },
       { id: 4, message: "But I'm busy now" }
     ],
-    newMessageBody: 'How are you Joker',
+    newMessageBody: '',
   },
+  
   reducers: {
-    updateNewMessageBodyCreator(state, action) {
-      state.newMessageBody = action.payload;
-    },
-    sendMessageCreator(state) {
-      const newMessage = { id: state.messagesData.length + 1, message: state.newMessageBody };
+    
+    sendMessage(state) {
+      const newMessage = { 
+        id: state.messagesData.length + 1, 
+        message: state.newMessageBody 
+      };
       state.messagesData.push(newMessage);
       state.newMessageBody = '';
+    },
+    updateNewMessageBody(state, action) {
+      state.newMessageBody = action.payload;
     },
   },
 });
 
-export const { updateNewMessageBodyCreator, sendMessageCreator } = dialogsSlice.actions;
+
+
+export const { updateNewMessageBody, sendMessage} = dialogsSlice.actions;
 export default dialogsSlice.reducer;

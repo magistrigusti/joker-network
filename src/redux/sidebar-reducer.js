@@ -8,6 +8,7 @@ import { FaVideo } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { MdGroups3 } from "react-icons/md";
 import { PiPersonArmsSpreadFill } from "react-icons/pi";
+import { MdGroupAdd } from "react-icons/md";
 
 let initialState = {
   sidebarData: [
@@ -17,10 +18,11 @@ let initialState = {
     { id: 4, to: "/friends", name: "Friends", icon: <FaPeopleGroup /> },
     { id: 5, to: "/dialogs", name: "Dialogs", icon: <FaMessage /> },
     { id: 6, to: "/groups", name: "Groups", icon: <MdGroups3 />},
-    { id: 7, to: "/news", name: "News",icon: <FaNewspaper /> },
-    { id: 8, to: "/music", name: "Music", icon: <FaMusic /> },
-    { id: 9, to: "/video", name: "Video", icon: <FaVideo /> },
-    { id: 10, to: "/settings", name: "Settings", icon: <FaGear /> },
+    { id: 7, to: '/users', name: "Users", icon: <MdGroupAdd />},
+    { id: 8, to: "/news", name: "News",icon: <FaNewspaper /> },
+    { id: 9, to: "/music", name: "Music", icon: <FaMusic /> },
+    { id: 10, to: "/video", name: "Video", icon: <FaVideo /> },
+    { id: 11, to: "/settings", name: "Settings", icon: <FaGear /> },
     
   ]
 }

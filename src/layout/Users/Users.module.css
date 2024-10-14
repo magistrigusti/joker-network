@@ -1,0 +1,36 @@
+.users_wrapper {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.avatar {
+    width: 140px;
+    border-radius: 50%;
+}
+
+.button_wrapper {
+    padding-bottom: 25px;
+}
+
+.button {
+    padding: 8px 5px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.button button {
+    border: none;
+}
+
+.user_dates {
+    display: flex;
+
+}
+
+.date {
+    padding: 10px;
+    padding-left: 50px;
+    width: 350px;
+}

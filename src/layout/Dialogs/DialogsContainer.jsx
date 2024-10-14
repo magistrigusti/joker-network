@@ -1,45 +1,24 @@
 import React from 'react';
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
+import { updateNewMessageBody, sendMessage } from '../../redux/dialogs-reducer';
 
-
-// const DialogsContainer = (props) => {
-//   const dialogsState = useSelector(state => state.dialogsPage);
-//   const dispatch = useDispatch();
-
-//   const handleMessageClick = () => {
-//     dispatch(sendMessageCreator());
-//   };
-
-//   const handleNewMessageChange = (body) => {
-//     dispatch(updateNewMessageBodyCreator(body));
-//   };
-
-//   return (
-//     <div>
-//       <Dialogs dialogsPage={dialogsState}
-//         updateNewMessageBody={handleNewMessageChange}
-//         sendMessage={handleMessageClick}
-//       />
-//     </div>
-//   )
-// };
 
 let mapStateToProps = (state) => {
   return {
-    dialogsPage: state.dialogsPage
+    dialogsPage: state.dialogsPage,
+    newMessageBody: state.dialogsPage.newMessageBody,
   }
 }
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMessageBody: () => {
-      dispatch(sendMessageCreator());
+    sendMessage: () => {
+      dispatch(sendMessage()); // Отправляем сообщение без аргументов
     },
-    sendMessage: (body) => {
-      dispatch(updateNewMessageBodyCreator(body));
-    }
+    updateNewMessageBody: (body) => {
+      dispatch(updateNewMessageBody(body)); // Обновляем текст
+    },
   }
 }
 

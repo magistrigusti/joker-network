@@ -15,6 +15,7 @@ import VideoContainer from './layout/Video/VideoContainer';
 import Home from './layout/Home/Home';
 import Settings from './layout/Settings/Settings';
 import GroupsContainer from './layout/Groups/GgroupsContainer';
+import UsersContainer from './layout/Users/UsersContainer';
 
 const App = () => {
   const sidebarState = useSelector(state => state.sidebarPage);
@@ -22,6 +23,7 @@ const App = () => {
   const postsState = useSelector(state => state.postsPage);
   const friendsState = useSelector(state => state.friendsPage);
   const dialogsState = useSelector(state => state.dialogsPage);
+
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
 
@@ -40,6 +42,7 @@ const App = () => {
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
               <Route path="/groups" element={<GroupsContainer />} />
+              <Route path='/users' element={<UsersContainer />} />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />
