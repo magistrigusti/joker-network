@@ -1,51 +1,53 @@
 import React from 'react';
 import style from './Users.module.css';
-import mama from '../../img/radmila.png';
-import masha from '../../img/masha.png';
 import fagundes from '../../img/fogundes.png';
-import saha from '../../img/sahajpg.jpg';
+import axios from 'axios';
 
-let Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-            {id: 1, photoUrl: mama, followed: false, fullName: 'Tatiana', status:  'i am a Mama', location: {city: 'Ivanovo', country: 'Russia'}},
-            {id: 2, photoUrl: masha, followed: true, fullName: 'Maria', status:  'i am a Macha', location: {city: 'Moscow', country: 'Russia'}},
-            {id: 3, photoUrl: saha, followed: false, fullName: 'Sacha', status:  'i am a Ganksta', location: {city: 'Holon', country: 'Israel'}},
-            {id: 4, photoUrl: fagundes, followed: true, fullName: 'Anton', status:  'i am a GrandMaster pokers', location: {city: 'Minsk', country: 'Belarus'}},
-        ])
+class Users extends React.Component{
+    getUsers = () => {
+        if (this.props.users.length === 0) {
+            axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            })
+            
+        }
     }
-
-    return (
-        <div>
+    render () {
+        return (
+            <div>
+            <button className={style.button_users} onClick={this.getUsers}>Get Users</button>
             {
-                props.users.map(user => (
+                this.props.users.map(user => (
                     <div className={style.users_wrapper} key={user.id}>
                         <span>
                             <div>
-                                <img className={style.avatar} src={user.photoUrl} alt={user.fullName} /> {/* Добавлено src и alt */}
+                                <img className={style.avatar} src={user.photos.small != null ? user.photos.small : fagundes } alt={user.fullName} /> 
                             </div>
                             <div className={style.button_wrapper}>
-                                <button className={style.button}>{user.followed ? <button  onClick={() => {props.unfollow(user.id)}}
+                                <button className={style.button}>{user.followed ? <button className={style.button} onClick={() => {this.props.unfollow(user.id)}}
                                 >Unfollow</button> : 
-                                <button onClick={() => {props.follow(user.id)}}
+                                <button className={style.button} onClick={() => {this.props.follow(user.id)}}
                                 >Follow</ button>}</button> 
                             </div>
                         </span>
                         <span className={style.user_dates}>
                             <span className={style.date}>
-                                <div>{user.fullName}</div>
-                                <div>{user.status}</div>
+                                <div className={style.name}>{user.name}</div>
+                                <div className={style.status}>{user.status}</div>
                             </span>
                             <span className={style.date}>
-                                <div>{user.location.country}</div>
-                                <div>{user.location.city}</div>
+                                {/* <div className={style.country}>{user.location.country}</div> */}
+                                {/* <div className={style.city}>{user.location.city}</div> */}
                             </span>
                         </span>
                     </div>
                 ))
             }
         </div>
-    )
+        )
+    }
+
 }
 
 export default Users;
