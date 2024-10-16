@@ -1,5 +1,4 @@
 
-
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
@@ -7,7 +6,10 @@ const SET_USERS = 'SET_USERS';
 let initialState = {
     users: [
         
-    ]
+    ],
+    pageSize: 10,
+    totalUsersCount: 50,
+    currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {

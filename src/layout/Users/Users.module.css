@@ -2,11 +2,23 @@
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: space-around;
+}
+
+.users_wrapper span {
+    display: flex;
     justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.selectedPade {
+    font-weight: bold;
+    color: var(--text-inactive);
 }
 
 .avatar {
-    width: 140px;
+    width: 100px;
     border-radius: 50%;
 }
 
@@ -20,10 +32,10 @@
 
 .button_wrapper {
     padding-bottom: 25px;
-   
 }
 
 .button {
+    padding-top: -16px;
     padding: 5px;
     font-size: 18px;
     border-radius: 15px;

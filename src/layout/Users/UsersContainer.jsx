@@ -6,7 +6,10 @@ import { follow, unfollow, setUsers } from '../../redux/users-reducer';
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users || [] // Добавлен return
+        users: state.usersPage.users || [],
+        pageSize: state.usersPage.pageSize,
+        totalUserCount: state.usersPage.totalUsersCount,
+        currentPage: state.usersPage.currentPage,
     };
 };
 
