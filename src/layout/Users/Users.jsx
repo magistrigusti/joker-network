@@ -6,14 +6,24 @@ import axios from 'axios';
 class Users extends React.Component {
 
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
-                this.props.setUsers(response.data.items)
+                this.props.setUsers(response.data.items);
+                this.props.setUsersTotalCount(response.data.totalCount);
+            });
+    }
+
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
             })
     }
 
     render() {
-        let pagesCount = this.props.totalUsersCount / this.props.pageSize;  
+        // Рассчет количества страниц
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);  
         let pages = [];
 
         for (let i = 1; i <= pagesCount; i++) {
@@ -21,25 +31,24 @@ class Users extends React.Component {
         }
 
         return (
-            <div>
-                <div>
-                    {pages.map(page => {
-                        return (
-                            <span
-                                key={page}
-                                className={this.props.currentPage === page ? style.selectedPage : undefined}
-                                onClick={() => this.props.onPageChanged(page)}
-                            >
-                                {page}
-                            </span>
-                        );
-                    })}
+            <div className={style.users_wrapper}>
+                <div className={style.pagination}>
+                    {pages.length > 0 ? pages.map(page => (
+                        <span
+                            key={page}  // Используем page как ключ
+                            className={`${style.pageNumber} ${this.props.currentPage === page && style.selectedPage}`} 
+                            onClick={(event) => {this.onPageChanged(page)}}>
+                            {page}
+                        </span>
+                    )) : <p>No pages available</p>}
                 </div>
 
                 {
-                    this.props.users.map(user => (
-                            <div className={style.users_wrapper} key={user.id}>
-                                <span>
+                    this.props.users
+                        .filter(user => user.photos.small !== null)
+                        .map(user => (
+                            <div className={style.users} key={user.id}>
+                                <span className={style.user}>
                                     <div>
                                         <img
                                             className={style.avatar}
@@ -64,9 +73,8 @@ class Users extends React.Component {
                         ))
                 }
             </div>
-        )
+        );
     }
-
 }
 
 export default Users;

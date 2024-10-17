@@ -1,20 +1,46 @@
 .users_wrapper {
+    display: block;
+    /* position: relative; */
+    color: var(--text-color);
+    width: 100%;
+    /* font-size: 2em; */
+    font-family: "Rye", serif;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+    padding-left: 40px;
+    padding-top: 10px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.users {
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-around;
+
 }
 
-.users_wrapper span {
+.user {
     display: flex;
-    justify-content: space-evenly;
     text-align: center;
     align-items: center;
 }
 
 .selectedPade {
-    font-weight: bold;
     color: var(--text-inactive);
+}
+
+.pageNumber {
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #000;
+}
+
+.selectedPage {
+    font-weight: bold;
+    color: #ff6347; /* Например, цвет для выбранной страницы */
+    border-bottom: 2px solid #ff6347;
 }
 
 .avatar {
