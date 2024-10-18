@@ -1,0 +1,28 @@
+.news_item {
+  display: flex;
+  font-weight: 400;
+  letter-spacing: 2px;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 5px;
+  text-align: center;
+}
+
+.news_btn {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.news_btn a {
+  font-size: 20px;
+}
+
+.time {
+  padding-left: 25px;
+}

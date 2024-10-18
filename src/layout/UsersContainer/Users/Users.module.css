@@ -15,6 +15,25 @@
 
 .pagination {
     font-size: 18px;
+    padding: 15px;
+    text-align: center;
+}
+
+.pageNumber {
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #000;
+}
+
+.selectedPade {
+    color: var(--text-inactive);
+}
+
+.selectedPage {
+    font-weight: bold;
+    color: #ff6347; /* Например, цвет для выбранной страницы */
+    border-bottom: 2px solid #ff6347;
 }
 
 .users {
@@ -30,22 +49,6 @@
     align-items: center;
 }
 
-.selectedPade {
-    color: var(--text-inactive);
-}
-
-.pageNumber {
-    padding: 5px;
-    margin: 0 5px;
-    cursor: pointer;
-    color: #000;
-}
-
-.selectedPage {
-    font-weight: bold;
-    color: #ff6347; /* Например, цвет для выбранной страницы */
-    border-bottom: 2px solid #ff6347;
-}
 
 .avatar {
     width: 100px;
@@ -90,8 +93,7 @@
 }
 
 .name {
-    color: var(--text-inactive);
-    
+    color: var(--text-inactive);   
 }
 
 

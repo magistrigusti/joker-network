@@ -1,13 +1,22 @@
-// NewsItem.jsx
 import React from 'react';
-import './NewsItem.module.css'; // Стили для элемента новости
+import style from './NewsItem.module.css';
 
-const NewsItem = ({ title, imageUrl }) => {
+const NewsItem = ({ title, imageUrl, author, publishedAt, link }) => {
   return (
-    <div className="news-item">
-      <img src={imageUrl} alt={title} className="news-image" />
-      <h3 className="news-title">{title}</h3>
-    </div>
+    <>
+      <h3 className={style.title}>{title}</h3>
+      <div className={style.news_item}>
+        
+        <img src={imageUrl} alt={""} className="news-image" />
+
+        <button className={style.news_btn}>
+          <a href={link}>Read More</a>
+        </button>
+
+          <div className={style.time}>{publishedAt}</div>
+
+      </div>
+    </>
   );
 };
 

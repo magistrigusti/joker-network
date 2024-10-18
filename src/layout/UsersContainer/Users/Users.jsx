@@ -73,6 +73,31 @@ let Users = (props) => {
                     </span>
                 </div>
             ))}
+
+            <div className={style.pagination}>
+                {/* Кнопка для перехода на предыдущую порцию */}
+                {portionNumber > 1 &&
+                    <button onClick={() => setPortionNumber(portionNumber - 1)}>{"<"}</button>
+                }
+
+                {/* Отображение только страниц, входящих в текущую порцию */}
+                {pages
+                    .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
+                    .map(page => (
+                        <span
+                            key={page}  // Используем page как ключ
+                            className={`${style.pageNumber} ${props.currentPage === page && style.selectedPage}`}
+                            onClick={() => props.onPageChanged(page)}>
+                            {page}
+                        </span>
+                    ))
+                }
+
+                {/* Кнопка для перехода на следующую порцию */}
+                {portionNumber < portionCount &&
+                    <button onClick={() => setPortionNumber(portionNumber + 1)}>{">"}</button>
+                }
+            </div>
         </div>
     );
 };

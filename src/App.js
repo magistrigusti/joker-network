@@ -9,7 +9,7 @@ import ProfileContainer from './layout/Profile/Profile';
 import DialogsContainer from './layout/Dialogs/DialogsContainer';
 import PostsContainer from './layout/Posts/PostsContainer';
 import FriendsContainer from './layout/Friends/FriendsContainer';
-import News from './layout/News/News';
+import NewsContainer from './layout/News/NewsContainer';
 import MusicContainer from './layout/Music/MusicContainer';
 import VideoContainer from './layout/Video/VideoContainer';
 import Home from './layout/Home/Home';
@@ -43,7 +43,7 @@ const App = () => {
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
               <Route path="/groups" element={<GroupsContainer />} />
               <Route path='/users' element={<UsersContainer state={usersPage} />} />
-              <Route path="/news" element={<News />} />
+              <Route path="/news" element={<NewsContainer />} />
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />
               <Route path="/settings" element={<Settings />} />

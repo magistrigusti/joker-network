@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching } from '../../redux/users-reducer';
+import { follow, unfollow, setUsers, setCurrentPage, 
+    setUsersTotalCount, toggleIsFetching } from '../../redux/users-reducer';
 import axios from 'axios';
 import Users from './Users/Users';
 import preloader from '../../img/gear-spinner.svg';
@@ -19,9 +20,11 @@ class UsersContainer extends React.Component {
     }
 
     onPageChanged = (pageNumber) => {
+        this.props.toggleIsFetching(true);
         this.props.setCurrentPage(pageNumber);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleIsFetching(false);
                 this.props.setUsers(response.data.items);
             })
     }
