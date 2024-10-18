@@ -1,16 +1,25 @@
 :root {
-  --background: #0131bd;
-  --text-color: #fff;
-  --text-active: rgb(198, 170, 9);
-  --text-page: #dda9a9; 
+  --background: #154276;
+  
+  --text-color: #faf5e3;
+
+
+  --text-active: rgb(25, 231, 104);
+  
+  --text-page: #b3b9d6c9; 
+
   --text-titrs: #9B9B9B;
   --text-inactive: #EE914A;
 }
 
 [data-theme='dark'] {
-  --background: #02025c;
-  --text-color: #EE914A;
-  --text-page: rgb(0, 60, 128); 
+
+  --background: #182c13;
+
+  --text-color: #f1d8bbe3;
+  
+  --text-page: #00000098; 
+  
   --text-active: rgb(106, 28, 2);
   --text-inactive: rgb(106, 28, 2);
 }
@@ -20,7 +29,7 @@ body {
   color: var(--text-color);
 
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, "Moderustic", 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

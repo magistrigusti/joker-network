@@ -4,9 +4,12 @@
   color: var(--text-color);
   width: 100%;
   font-size: 2em;
-  font-family: "Rye", serif;
+  font-family: "Moderustic", sans-serif;
+
   background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+
+  background: radial-gradient(circle, rgba(66, 53, 37, 0.726) 0%, rgba(148,187,233, 0.5) 100%);
+
   padding-left: 40px;
   padding-top: 10px;
   border-radius: 10px;
@@ -14,10 +17,12 @@
 }
 
 .title {
-  color: rgb(13, 94, 8);
+  color: #88A9C3;
+  font-family: "Cinzel", serif; 
   text-align: center;
   align-items: center;
-  font-size: 34px;
+  letter-spacing: 2px;
+  font-size: 38px;
   font-weight: 400;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -30,7 +35,9 @@
 }
 
 .home_title {
+  font-family: "Cinzel", serif;
   font-weight: 400;
+  text-align: center;
   color: var(--text-page);
 }
 
