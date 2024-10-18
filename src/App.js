@@ -15,7 +15,7 @@ import VideoContainer from './layout/Video/VideoContainer';
 import Home from './layout/Home/Home';
 import Settings from './layout/Settings/Settings';
 import GroupsContainer from './layout/Groups/GgroupsContainer';
-import UsersAPIComponent from './layout/UsersContainer/UsersAPIComponent';
+import UsersContainer from './layout/UsersContainer/UsersContainer';
 
 const App = () => {
   const sidebarState = useSelector(state => state.sidebarPage);
@@ -42,7 +42,7 @@ const App = () => {
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
               <Route path="/groups" element={<GroupsContainer />} />
-              <Route path='/users' element={<UsersAPIComponent state={usersPage} />} />
+              <Route path='/users' element={<UsersContainer state={usersPage} />} />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />

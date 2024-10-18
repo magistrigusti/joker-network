@@ -7,12 +7,6 @@ import MyPhotos from './MyPhotos/MyPhotos';
 const Profile = (props) => {
   const { profileState } = props;
 
-  if (!profileState) {
-    return <div>Loading...</div>;
-  }
-
-  console.log('Profile State in Profile:', profileState); // Добавь этот лог
-
   let fotoElements = profileState.photosLarge.map(foto => 
     <MyPhotos id={foto.id} foto={foto.name} key={foto.id} />
   );

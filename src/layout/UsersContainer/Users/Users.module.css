@@ -13,6 +13,10 @@
     z-index: 1;
 }
 
+.pagination {
+    font-size: 18px;
+}
+
 .users {
     display: flex;
     text-align: center;
@@ -27,7 +31,6 @@
 }
 
 .selectedPade {
-
     color: var(--text-inactive);
 }
 
@@ -59,6 +62,7 @@
 
 .button_wrapper {
     padding-bottom: 25px;
+    padding-left: 20px;
 }
 
 .button {
@@ -75,19 +79,34 @@
 
 .user_dates {
     display: flex;
-
+    text-align: center;
+    align-items: center;
+    max-width: 1200px;
 }
 
 .date {
-    padding: 10px;
-    padding-left: 50px;
-    width: 350px;
+    padding: 5px 20px;
+    width: 250px;
 }
 
 .name {
     color: var(--text-inactive);
+    
 }
 
-.country {
+
+.date_status {
+    padding: 10px;
+    padding-left: 50px;
+    text-align: center;
+    align-items: center;
+    min-width: 250px;
+    max-height: 80px;
+}
+
+
+.status {
+    display: block;
     color: var(--text-active);
+    
 }
