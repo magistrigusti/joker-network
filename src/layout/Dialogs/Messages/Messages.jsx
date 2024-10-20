@@ -1,13 +1,14 @@
 import React from 'react';
 import style from "./Messages.module.css";
 
-const Messages = (props) => {
-
+const Messages = ({ message, user }) => {
   return (
-    <div className={style.message}>
-        {props.message}
-      </div> 
-  )
+    <div className={`${style.messageWrapper} ${user === 'joker' ? style.jokerWrapper : style.userWrapper}`}>
+      <span className={user === 'joker' ? style.joker : style.msg}>
+         {message}
+      </span>
+    </div> 
+  );
 }
 
-export default Messages; 
+export default Messages;

@@ -1,3 +1,39 @@
-.message {
-  text-decoration: none;
+.messages {
+  padding: 30px;
+  font-family: "Prociono", serif;
+}
+
+.messageWrapper {
+  display: flex;
+  margin: 10px 0;
+}
+
+.jokerWrapper {
+  justify-content: flex-end; /* Выравнивание сообщений "джокера" по правому краю */
+}
+
+.userWrapper {
+  justify-content: flex-start; /* Выравнивание сообщений других пользователей по левому краю */
+}
+
+.joker {
+  text-align: right;
+  font-style: italic;
+  color: var(--text-color);
+  border: 4px var(--message-joker) solid; 
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 60%;
+  background-color: var(--joker-bg);
+}
+
+.msg {
+  text-align: left;
+  font-style: italic;
+  color: var(--text-color);
+  border: 4px var(--message-user) solid;
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 60%;
+  background-color: var(--user-bg);
 }

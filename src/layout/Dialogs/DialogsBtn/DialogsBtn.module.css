@@ -1,28 +1,24 @@
-.link_button_wrapper {
+.button_wrapper {
   margin: 12px;
 }
 
-.link_button {
+.button {
   margin-top: 10px;
   font-family: "Prociono", serif;
   font-size: 24px;
   border-radius: 10px;
   background-color: var(--btn-bg);
   padding: 10px 20px;
-  color: white;
+  color: var(--text-inactive);
   border: none;
   cursor: pointer;
   text-decoration: none;
 }
 
-.link_button a {
-  text-decoration: none;
-  color: var(--text-inactive);
-}
 
-.link_button:hover {
+.button:hover {
   background-color: var(--btn-hover);
-  color: var(--text-inactive);
+  color: var(--text-active);
 }
 
 @media (max-width: 430px) {

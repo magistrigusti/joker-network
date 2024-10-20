@@ -13,12 +13,13 @@ const Profile = (props) => {
 
   return (
     <div className={style.profile_wrapper}>
+      <h3 className={style.title}>Profile</h3>
       <div>
         <ProfileInfo profile={profileState} />
       </div>
       
       <div className={style.wrapper_photo}>
-        <div className={style.title_photo}>My foto</div>
+        <div className={style.title_photo}>My Photo</div>
         {fotoElements}
       </div>
     </div>

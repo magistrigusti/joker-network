@@ -1,10 +1,7 @@
 .dialogs {
-  
-
   position: relative;
-  width: 100vh;
   background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+  background: radial-gradient(circle, rgba(66, 53, 37, 0.726) 0%, rgba(148,187,233, 0.5) 100%);
   padding-left: 40px;
   padding-top: 20px;
   border-radius: 10px;
@@ -12,24 +9,27 @@
   
 }
 
+
 .title {
-  color: rgb(13, 94, 8);
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
   text-align: center;
   align-items: center;
-  font-size: 34px;
-  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .dialogs_wrapper {
   display: grid;
-  grid-template-columns: 4fr 9fr;
+  grid-template-columns: 2fr 9fr;
   padding-bottom: 10px;
 }
 
 .dialogs_item {
-  font-family: "Gorditas", serif;
+  font-family: "Cinzel", serif;
   padding: 10px;
 }
 
@@ -38,12 +38,16 @@
 }
 
 .messages {
-  padding: 10px;
-  text-decoration: none;
+  padding: 15px;
 }
 
-.new_message_wrapper {
+.messageElements {
+  padding: 20px 100px;
+}
+
+.input_wrapper {
   margin-top: 20px;
+  text-align: center;
   padding: 10px;
 }
 

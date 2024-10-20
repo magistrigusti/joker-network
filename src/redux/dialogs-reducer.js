@@ -3,22 +3,24 @@ import sahaAvatar from '../img/sahajpg.jpg';
 import mashaAvatar from '../img/masha.png';
 import radmilaAvatar from '../img/radmila.png';
 import annaAvatar from '../img/anna.png';
+import yanaAvatar from '../img/yanaavatarjpg.jpg';
 
 const dialogsSlice = createSlice({
   
   name: 'dialogs',
   initialState: {
     usersData: [
-      { id: 1, name: "Saha", avatar: sahaAvatar },
-      { id: 2, name: "Masha", avatar: mashaAvatar },
-      { id: 3, name: "Radmila", avatar: radmilaAvatar },
-      { id: 4, name: "Anna", avatar: annaAvatar }
+      { id: 1, name: "Saha", avatar: sahaAvatar, country: "Izrael", city: "Holon", status: "online" },
+      { id: 2, name: "Masha", avatar: mashaAvatar, country: "Russia", city: "Moscow", status: "offline" },
+      { id: 3, name: "Radmila", avatar: radmilaAvatar, country: "Russia", city: "Electrostal", status: "offline" },
+      { id: 4, name: "Anna", avatar: annaAvatar, country: "Russia", city: "Ivanovo", status: "offline" },
+      { id: 5, name: "Yana", avatar: yanaAvatar, country: "Russua", city: "Mosrow", status: "online" }
     ],
     messagesData: [
-      { id: 1, message: "Hello Saha" },
-      { id: 2, message: "How are you feel" },
-      { id: 3, message: "I'm fine, thank you" },
-      { id: 4, message: "But I'm busy now" }
+      { id: 1, user: 'joker', message: "Hello Saha" },
+      { id: 2, user: 'joker', message: "How are you feel" },
+      { id: 3, user: 'saha', message: "I'm fine, thank you" },
+      { id: 4, user: 'saha', message: "But I'm busy now" }
     ],
     newMessageBody: '',
   },

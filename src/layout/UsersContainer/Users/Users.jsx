@@ -84,8 +84,7 @@ let Users = (props) => {
                 {pages
                     .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
                     .map(page => (
-                        <span
-                            key={page}  // Используем page как ключ
+                        <span key={page}  // Используем page как ключ
                             className={`${style.pageNumber} ${props.currentPage === page && style.selectedPage}`}
                             onClick={() => props.onPageChanged(page)}>
                             {page}

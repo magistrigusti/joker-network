@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Posts.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import PostsBtn from './PostsBtn/PostsBtn';
 
 const Posts = (props) => {
   const postsElements = props.posts.map(post => (
@@ -24,12 +25,13 @@ const Posts = (props) => {
 
       <div className={style.posts_page}>
         <div className={style.new_post}>
-          <img
-            className={style.avatar}
+          <img className={style.avatar}
             src={props.profile?.photos?.avatar}
             alt="avatar"
           />
+
           <h5 className={style.new_post_title}>New post</h5>
+
           <div>
             <textarea
               className={style.input}
@@ -40,9 +42,10 @@ const Posts = (props) => {
             />
           </div>
           <div>
-            <button className={style.post_button} onClick={handleAddPost}>
+            <PostsBtn />
+            {/* <button className={style.post_button} onClick={handleAddPost}>
               Add post
-            </button>
+            </button> */}
           </div>
         </div>
 

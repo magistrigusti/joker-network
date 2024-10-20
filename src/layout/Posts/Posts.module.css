@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   max-width: 400px;
   max-height: 100%;
   color: var(--text-inactive);
@@ -58,7 +58,7 @@
 .post_title {
   display: block;
   text-align: center; 
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text-inactive);
   padding: 10px 20px;
 }
@@ -72,13 +72,13 @@
   background-color: transparent;
   vertical-align: bottom;
   text-align: center;
+  color: var(--text-color);
   cursor: pointer;
   margin: 15px;
 }
 
 .input::placeholder {
   position: absolute;
-  color: black;
   text-align: center;
   bottom: 10px;
   left: 30%;
@@ -93,22 +93,22 @@
   /* pointer-events: none; */
 }
 
-.post_button {
+/* .post_button {
   margin-top: 10px;
   font-size: 16px;
   border-radius: 10px;
-  background-color:rgb(0, 60, 128);
+  background-color: var(--btn-bg);
   padding: 10px 20px;
-  color: white;
+  color: var(--text-inactive);
   border: none;
   cursor: pointer;
 }
 
 .post_button:hover {
   background-color: rgb(0, 40, 80);
-  color: orangered;
+  color: var(--text-inactive);
   margin-top: 5px;
-}
+} */
 
 .posts {
   display: flex;

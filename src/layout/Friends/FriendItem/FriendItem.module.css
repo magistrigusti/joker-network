@@ -8,7 +8,7 @@
   padding: 10px;
   padding-right: 30px;
   font-family: "Mochiy Pop One", sans-serif;
-  /* justify-content: space-between; */
+  justify-content: space-around;
   color: var(--text-color);
   cursor: pointer;
 }
@@ -65,8 +65,16 @@
 .icon {
   padding-left: 20px;
   padding-right: 10px;
-  font-size: 28px;
-  color: var(--text-page);
+  font-size: 44px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.icon_friends {
+  padding-left: 20px;
+  padding-right: 10px;
+  font-size: 44px;
+  color: var(--delete-color);
   cursor: pointer;
 }
 

@@ -13,10 +13,25 @@
   z-index: 1;
 }
 
+.title {
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .title_photo {
   text-align: center;
   font-size: 34px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: var(--text-inactive);
+  padding: 35px;
 }
 
 @media (max-width: 430px) {
