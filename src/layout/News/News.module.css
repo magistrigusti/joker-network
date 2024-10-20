@@ -1,11 +1,8 @@
 .news_wrapper {
   display: block;
-  /* position: relative; */
-  /* color: rgb(143, 222, 119); */
-  /* width: 100%; */
   font-family: "Rye", serif;
   background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+  background: radial-gradient(circle, rgba(66, 53, 37, 0.726) 0%, rgba(148,187,233, 0.5) 100%);
   color: var(--text-color);
   padding-left: 40px;
   padding-top: 5px;
@@ -38,11 +35,15 @@
 }
 
 .title {
-  color: rgb(13, 94, 8);
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
   text-align: center;
-  font-size: 34px;
-  font-weight: 400;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .button_news {

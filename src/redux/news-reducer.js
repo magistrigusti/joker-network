@@ -5,7 +5,7 @@ const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
   news: [], // Вместо items
-  pageSize: 5,
+  pageSize: 3,
   totalResults: 0,
   currentPage: 1,
   isFetching: true

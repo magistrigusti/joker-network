@@ -1,25 +1,27 @@
 :root {
   --background: #154276;
-  
+  --btn-bg: #faf5e3;
+  --btn-hover: #88A9C3;
   --text-color: #faf5e3;
 
-
-  --text-active: rgb(25, 231, 104);
+  --text-title: #88A9C3;
+  --text-active: rgb(31, 179, 87);
   
-  --text-page: #b3b9d6c9; 
+  --text-page: #b3b9d6c9;   
+  --text-inactive: #EE914A;
 
   --text-titrs: #9B9B9B;
-  --text-inactive: #EE914A;
 }
 
 [data-theme='dark'] {
 
   --background: #182c13;
-
-  --text-color: #f1d8bbe3;
-  
+  --btn-bg: #f1d8bbe3;
+  --btn-hover: #ee914a65;
+  --text-color: #f1d8bb70;
+  --text-title: #1a1046;
   --text-page: #00000098; 
-  
+
   --text-active: rgb(106, 28, 2);
   --text-inactive: rgb(106, 28, 2);
 }

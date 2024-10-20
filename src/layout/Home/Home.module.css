@@ -17,13 +17,13 @@
 }
 
 .title {
-  color: #88A9C3;
+  color: var(--text-title);
   font-family: "Cinzel", serif; 
   text-align: center;
   align-items: center;
   letter-spacing: 2px;
   font-size: 38px;
-  font-weight: 400;
+  font-weight: 600;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -46,4 +46,5 @@
   font-weight: 400;
   color: var(--text-color);
   text-align: center;
+  padding-bottom: 30px;
 }

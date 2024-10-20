@@ -53,4 +53,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setNews, setCurrentPage, setNewsTotalCount, toggleIsFetching })(NewsContainer);
+export default connect(mapStateToProps, { setNews, setCurrentPage, setNewsTotalCount, toggleIsFetching, })(NewsContainer);

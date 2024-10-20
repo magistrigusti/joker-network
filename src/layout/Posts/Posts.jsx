@@ -20,32 +20,37 @@ const Posts = (props) => {
 
   return (
     <div className={style.post_wrapper}>
-      <div className={style.new_post}>
-        <img
-          className={style.avatar}
-          src={props.profile?.photos?.avatar}
-          alt="avatar"
-        />
-        <h5 className={style.new_post_title}>New post</h5>
-        <div>
-          <textarea
-            className={style.input}
-            onChange={handlePostChange}
-            placeholder="Write your post"
-            value={props.newPostText}
-            ref={newPostElement}
+      <h3 className={style.title}>Posts</h3>
+
+      <div className={style.posts_page}>
+        <div className={style.new_post}>
+          <img
+            className={style.avatar}
+            src={props.profile?.photos?.avatar}
+            alt="avatar"
           />
+          <h5 className={style.new_post_title}>New post</h5>
+          <div>
+            <textarea
+              className={style.input}
+              onChange={handlePostChange}
+              placeholder="Write your post"
+              value={props.newPostText}
+              ref={newPostElement}
+            />
+          </div>
+          <div>
+            <button className={style.post_button} onClick={handleAddPost}>
+              Add post
+            </button>
+          </div>
         </div>
+
         <div>
-          <button className={style.post_button} onClick={handleAddPost}>
-            Add post
-          </button>
-        </div>
-      </div>
-      <div>
-        <h5 className={style.post_title}>My posts:</h5>
-        <div className={style.posts}>
-          {postsElements}
+          <h5 className={style.post_title}>My posts:</h5>
+          <div className={style.posts}>
+            {postsElements}
+          </div>
         </div>
       </div>
     </div>

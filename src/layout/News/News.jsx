@@ -45,6 +45,8 @@ const News = (props) => {
           author={article.author}
           publishedAt={article.publishedAt}
           link={article.url}
+          description={article.description}
+          content={article.content}
         />
       ))}
     </div>
