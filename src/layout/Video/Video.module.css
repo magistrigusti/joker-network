@@ -5,7 +5,7 @@
   /* width: 100%; */
   font-family: "Rye", serif;
   background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202, 0.5) 0%, rgba(148,187,233, 0.5) 100%);
+  background: radial-gradient(circle, rgba(66, 53, 37, 0.726) 0%, rgba(148,187,233, 0.5) 100%);
   padding-left: 40px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -14,11 +14,13 @@
 }
 
 .title {
-  color: rgb(13, 94, 8);
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
   text-align: center;
   align-items: center;
-  font-size: 34px;
-  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -28,6 +30,7 @@
 }
 
 .video_content {
+  font-family: "Prociono", serif;
   padding: 20px;
 }
 

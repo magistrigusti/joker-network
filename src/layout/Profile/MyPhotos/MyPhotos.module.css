@@ -7,8 +7,7 @@
 
 .my_fotos img {
   margin-left: 20px;
-  max-height: 150px;
-  max-width: 150px;
+  height: 150px;
 }
 
 @media (max-width: 430px) {

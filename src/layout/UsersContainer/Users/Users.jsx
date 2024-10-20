@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './Users.module.css';
-import ImgUsers from '../../../img/fogundes.png';
+import ImgUsers from '../../../img/avatars/fogundes.png';
 
 let Users = (props) => {
     const [portionNumber, setPortionNumber] = useState(1);  // Стейт для отслеживания "окна" страниц

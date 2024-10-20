@@ -10,7 +10,9 @@
   --text-active: #fd9240;
   --text-page: #b3b9d6c9;   
   --text-inactive: #e98e48;
+
   --text-titrs: #9B9B9B;
+
   --message-joker: #27587efa;
   --message-user: rgba(0, 128, 0, 0.438);
   --delete-color: rgba(167, 1, 1, 0.61);
@@ -21,13 +23,20 @@
   --background: #182c13;
   --btn-bg: #f1d8bbe3;
   --btn-hover: rgb(0, 40, 80); 
+  --joker-bg: #0e2f47c4;
+  --user-bg: rgba(24, 88, 24, 0.534);
 
   --text-color: #f1d8bb70;
   --text-title: #1a1046;
   --text-page: #00000098; 
   --text-active: rgb(196, 63, 19);
   --text-inactive: rgb(106, 28, 2);
-  --message-joker: #1874b98e;
+
+  --text-titrs: #9B9B9B;
+  
+  --message-joker: #084675a1;
+  --message-user: rgba(2, 73, 2, 0.589);
+  
   --delete-color: rgba(88, 2, 2, 0.61);
 }
 

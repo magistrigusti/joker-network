@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'; // Импортируем хуки
 import { TonConnectUIProvider } from "@tonconnect/ui-react"
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
+import PokerGameContainer from './components/PokerGame/PokerGameContainer';
 import ProfileContainer from './layout/Profile/Profile';
 import DialogsContainer from './layout/Dialogs/DialogsContainer';
 import PostsContainer from './layout/Posts/PostsContainer';
@@ -47,6 +48,7 @@ const App = () => {
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/poker" element={<PokerGameContainer />} />
             </Routes>
           </div>
         </div>

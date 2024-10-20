@@ -1,0 +1,85 @@
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0e7b1a;
+}
+
+.table {
+  width: 800px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a2a2a 0%, #000000 100%);
+  position: relative;
+  border: 8px solid #ffffff;
+}
+
+.center-pot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.community-cards img {
+  width: 60px;
+  margin: 0 5px;
+}
+
+.pot {
+  color: white;
+  margin-top: 10px;
+}
+
+.players {
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: inherit;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player1 { top: -100px; left: 50%; transform: translateX(-50%); }
+.player2 { top: 50%; left: 10px; transform: translateY(-50%); }
+.player3 { top: 50%; right: 10px; transform: translateY(-50%); }
+/* Добавить стили для других игроков */
+
+.deck-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  font-family: "Prociono", serif;
+  padding: 15px 20px;
+}
+
+.actions {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fold { background-color: red; color: white; }
+.call { background-color: yellow; }
+.raise { background-color: green; color: white; }

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import sahaAvatar from '../img/sahajpg.jpg';
-import mashaAvatar from '../img/masha.png';
-import radmilaAvatar from '../img/radmila.png';
-import annaAvatar from '../img/anna.png';
-import yanaAvatar from '../img/yanaavatarjpg.jpg';
+import sahaAvatar from '../img/avatars/sahajpg.jpg';
+import mashaAvatar from '../img/avatars/masha.png';
+import radmilaAvatar from '../img/avatars/radmila.png';
+import annaAvatar from '../img/avatars/anna.png';
+import yanaAvatar from '../img/avatars/yanaavatarjpg.jpg';
 
 const friendsSlice = createSlice({
   name: 'friends',

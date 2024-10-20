@@ -9,6 +9,7 @@ import { FaGear } from "react-icons/fa6";
 import { MdGroups3 } from "react-icons/md";
 import { PiPersonArmsSpreadFill } from "react-icons/pi";
 import { MdGroupAdd } from "react-icons/md";
+import { GiPokerHand } from "react-icons/gi";
 
 let initialState = {
   sidebarData: [
@@ -23,6 +24,7 @@ let initialState = {
     { id: 9, to: "/music", name: "Music", icon: <FaMusic /> },
     { id: 10, to: "/video", name: "Video", icon: <FaVideo /> },
     { id: 11, to: "/settings", name: "Settings", icon: <FaGear /> },
+    { id: 12, to: "/poker", name: "Poker", icon: <GiPokerHand style={{fontSize: '35px'}} />}
     
   ]
 }

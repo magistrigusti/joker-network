@@ -1,51 +1,46 @@
 
-
 .group_item {
   display: flex;
   align-items: center;
   text-align: center;
   padding: 10px;
   padding-right: 30px;
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Prociono", serif;
   justify-content: space-between;
-  color: rgb(27, 35, 109);
   cursor: pointer;
-}
-
-.items {
-  padding-left: 40px;
-  font-size: 24px;
-}
-
-.items p {
-  margin-top: 0px;
-  
-  padding-bottom: 0px;
-  margin-bottom: 0px;
 }
 
 .items_group {
   display: flex;
+  align-items: center;
   color: var(--text-color);
-  letter-spacing: 1px;
 }
 
-.group_item:hover {
-  border: 3px var(--text-active) solid;
-  border-radius: 15px;
-  margin-right: 30px;
+.avatar_wrapper {
+  width: 200px;
 }
 
 .group_avatar { 
-  height: 80px;
-  width: 80px;
-  margin-right: 20px;
-  border-radius: 50%;
+  height: 100px;
+  margin-right: 40px;
+  border-radius: 15px;;
+}
+
+.group_wrapper {
+  align-items: center;
+  text-align: center;
 }
 
 .group_name {
-  font-weight: 600;
   margin: 10px;
+  font-weight: 600;
+  color: var(--text-active);
+  letter-spacing: 2px;
+  font-size: 38px;
+}
+
+.description {
+  font-size: 24px;
 }
 
 .group_subscribers {
@@ -54,11 +49,30 @@
   color: #dda9a9;
 }
 
-.icon {
+.wrapper_subscribers {
+  display: flex;
+  color: var(--text-titrs);
+}
+
+.subscribers {
+  font-size: 24px;
+  
   padding-left: 20px;
-  padding-right: 10px;
+}
+
+.icon_message {
+  padding-left: 40px;
+  padding-right: 40px;
   font-size: 28px;
-  color: var(--text-page);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.icon {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 28px;
+  color: var(--delete-color);
   cursor: pointer;
 }
 

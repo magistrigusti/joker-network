@@ -52,19 +52,20 @@
 }
 
 .imput_message {
-  margin: 15px;
+  margin: 25px;
   width: 50%;
-  padding: 10px;
+  font-size: 18px;
   border-radius: 10px;
   background-color: transparent;
   border: 2px black solid;
+  color: var(--text-color);
   cursor: pointer;
   text-align: center;
+  padding: 20px;
 }
 
 .imput_message::placeholder {
   color: black;
-  bottom: 20px;
 }
 
 .send_message {

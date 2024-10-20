@@ -4,7 +4,9 @@ import GroupItem from './GroupItem/GroupItem';
 
 const Groups = ({state}) => {
   let groupsElements = state.groupsData.map(group =>
-    <GroupItem id={group.id} name={group.name} subscribers={group.subscribers} avatar={group.avatar}  />
+    <GroupItem id={group.id} name={group.name} 
+      subscribers={group.subscribers} avatar={group.avatar} description={group.description}
+    />
   )
 
   return (
