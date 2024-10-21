@@ -6,7 +6,7 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react"
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import PokerGameContainer from './components/PokerGame/PokerGameContainer';
-import ProfileContainer from './layout/Profile/Profile';
+import ProfileContainer from './layout/Profile/ProfileContainer';
 import DialogsContainer from './layout/Dialogs/DialogsContainer';
 import PostsContainer from './layout/Posts/PostsContainer';
 import FriendsContainer from './layout/Friends/FriendsContainer';
