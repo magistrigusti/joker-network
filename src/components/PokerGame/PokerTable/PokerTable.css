@@ -1,18 +1,32 @@
 .table-wrapper {
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   height: 100vh;
   background-color: #0e7b1a;
+  font-family: "Cinzel", serif;
 }
 
 .table {
   width: 800px;
-  height: 600px;
+  height: 900px;
   border-radius: 50%;
   background: radial-gradient(circle, #2a2a2a 0%, #000000 100%);
   position: relative;
   border: 8px solid #ffffff;
+}
+
+.title {
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .center-pot {
@@ -49,32 +63,6 @@
 .player3 { top: 50%; right: 10px; transform: translateY(-50%); }
 /* Добавить стили для других игроков */
 
-.deck-actions {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn {
-  font-family: "Prociono", serif;
-  padding: 15px 20px;
-}
-
-.actions {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.action-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 .fold { background-color: red; color: white; }
 .call { background-color: yellow; }
