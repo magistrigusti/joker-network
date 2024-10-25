@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../Context/ThemeContext';
 import style from './NavBar.module.css';
 import Nav from './NavLink/NavLink';
-import { MdDarkMode } from "react-icons/md";
-import { MdLightMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
-const NavBar = ({ state }) => {
+const NavBar = ({ state, icons }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 400);
   const { isDarkMode, toggleTheme } = useTheme();
 
@@ -25,15 +24,19 @@ const NavBar = ({ state }) => {
         </button>
       </div>
 
-      {state.sidebarData.map(sidebar => (
-        <Nav className={style.item}
-          key={sidebar.id} 
-          to={sidebar.to} 
-          icon={sidebar.icon}
-          name={sidebar.name} 
-          isCollapsed={isMobile} // Иконки на мобильных, имена на веб
-        />
-      ))}
+      {state.sidebarData.map((sidebar) => {
+        const IconComponent = icons[sidebar.iconName];
+        return (
+          <Nav
+            className={style.item}
+            key={sidebar.id}
+            to={sidebar.to}
+            icon={<IconComponent />} // передаем компонент иконки
+            name={sidebar.name}
+            isCollapsed={isMobile}
+          />
+        );
+      })}
     </nav>
   );
 };

@@ -15,7 +15,7 @@ const Profile = (props) => {
     <div className={style.profile_wrapper}>
       <h3 className={style.title}>Profile</h3>
       <div>
-        <ProfileInfo profile={profileState} profile={props.props} />
+        <ProfileInfo profile={props.props} />
       </div>
       
       <div className={style.wrapper_photo}>

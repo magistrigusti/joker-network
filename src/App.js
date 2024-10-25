@@ -3,8 +3,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux'; // Импортируем хуки
 import { TonConnectUIProvider } from "@tonconnect/ui-react"
-import Header from './components/Header/Header';
-import NavBar from './components/NavBar/NavBar';
+import HeaderContainer from './components/Header/HeaderContainer';
+import NavBarContainer from './components/NavBar/NavBarContainer';
 import PokerGameContainer from './components/PokerGame/PokerGameContainer';
 import ProfileContainer from './layout/Profile/ProfileContainer';
 import DialogsContainer from './layout/Dialogs/DialogsContainer';
@@ -32,8 +32,8 @@ const App = () => {
   return (
     <TonConnectUIProvider manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/">
       <div className="app-wrapper">
-        <Header state={sidebarState} />
-        <NavBar state={sidebarState} />
+        <HeaderContainer state={sidebarState} />
+        <NavBarContainer state={sidebarState} />
         <div className="background_container">
           <div className="text_overlay">
             <Routes>

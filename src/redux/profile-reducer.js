@@ -1,4 +1,3 @@
-// profile-reducer.js
 import myfoto1 from '../img/myfoto-1.png';
 import myfoto2 from '../img/myfoto-2.png';
 import myfoto3 from '../img/myfoto-3.png';
@@ -22,6 +21,15 @@ let initialState = {
     yearsOld: 39,
     aboutMe: "I'm a freelance web developer",
     userStatus: "I'm a joker",
+    lookingForAJob: false,
+    lookingForAJobDescription: "",
+    contacts: {
+      facebook: null,
+      vk: null,
+      twitter: null,
+      instagram: null,
+      github: null,
+    },
     photos: { avatar: myAvatar },
     photosLarge: [
       { id: 1, name: myfoto3 },
@@ -44,16 +52,27 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_USER_PROFILE: {
-      return {...state, profile: action.profile}
+      return {
+        ...state, 
+        profileData: {
+          ...state.profileData,
+          ...action.profile, // Объединение профиля с новым ответом
+          contacts: {
+            ...action.profile.contacts // Обновляем контакты
+          },
+          photos: {
+            small: action.profile.photos.small || state.profileData.photos.avatar,
+            large: action.profile.photos.large || state.profileData.photosLarge
+          }
+        }
+      };
     }
     default: 
       return state;
   }
 }
 
-export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
-
-
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 
 export default profileReducer;
 
