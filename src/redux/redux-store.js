@@ -9,6 +9,7 @@ import videoReducer from './video-reducer';
 import groupsReducer from './groups-reducer';
 import newsReducer from './news-reducer';
 import usersReducer from './users-reducer';
+import pokerReducer from './poker-reducer';
 
 // Комбинируем редюсеры
 const rootReducer = combineReducers({
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   groupsPage: groupsReducer,
   newsPage: newsReducer,
   usersPage: usersReducer, 
+  pokerPage: pokerReducer,
 });
 
 // Создаем хранилище

@@ -38,14 +38,10 @@
 }
 
 .player {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: inherit;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white; /* Добавляем цвет текста для улучшения видимости */
+  font-size: 1.2em; /* Увеличиваем размер шрифта */
+  margin: 10px 0; /* Добавляем отступы */
+  text-align: center; /* Центрируем текст */
 }
 
 .player1 { top: -100px; left: 50%; transform: translateX(-50%); }

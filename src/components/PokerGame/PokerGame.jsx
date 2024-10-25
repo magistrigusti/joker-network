@@ -1,45 +1,33 @@
 import React from 'react';
-import style from './PokerGame.module.css';
-import Button from "./button";
+import { determineWinner } from './PokerRules'; // Импортируем функции из PokerRules
 
 const PokerGame = ({ playerHand, dealerHand, gameStatus }) => {
-  // Получение пути к изображению карты
-  const getCardImage = (card) => {
-    return `${process.env.PUBLIC_URL}/cards/${card.value}_of_${card.suit}.png`;
-  };
-
-  // const handleBet = (betAmount) => {
-  //   // Проверяем, что игрок может сделать такую ставку
-  //   if (player.chips >= betAmount) {
-  //     player.chips -= betAmount;
-  //     pot += betAmount;
-  //     // Обновляем текущую ставку
-  //     currentBet = betAmount;
-  //   }
-  // };
+  const winner = determineWinner(playerHand, dealerHand);
 
   return (
     <div className="poker-game">
-      <h2>{gameStatus}</h2>
-      <Button />
-      <div className="hands">
-        <div className="player-hand">
-          <h3>Игрок</h3>
-          {playerHand.map((card, index) => (
-            <img key={index} className={style.card} src={getCardImage(card)} alt={`${card.value} of ${card.suit}`} />
-          ))}
-        </div>
-
-        <div className="dealer-hand">
-          <h3>Дилер</h3>
-          {dealerHand.map((card, index) => (
-            <img key={index} className={style.card} src={getCardImage(card)} alt={`${card.value} of ${card.suit}`} />
-          ))}
-        </div>
+      <div className="player-hand">
+        <h2>Player Hand</h2>
+        {playerHand.map((card, index) => (
+          <div key={index} className={`card ${card.suit}`}>
+            {card.value}
+          </div>
+        ))}
+      </div>
+      <div className="dealer-hand">
+        <h2>Dealer Hand</h2>
+        {dealerHand.map((card, index) => (
+          <div key={index} className={`card ${card.suit}`}>
+            {card.value}
+          </div>
+        ))}
+      </div>
+      <div className="game-status">{gameStatus}</div>
+      <div className="winner">
+        {winner.winner !== 'Draw' ? `${winner.winner} wins with ${winner.hand}` : "It's a draw!"}
       </div>
     </div>
   );
 };
 
 export default PokerGame;
-

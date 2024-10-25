@@ -27,6 +27,7 @@ const App = () => {
   const usersPage = useSelector(state => state.usersPage);
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
+  const pokerState = useSelector(state => state.pokerPage);
 
 
   return (
@@ -38,7 +39,7 @@ const App = () => {
           <div className="text_overlay">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile/:profileId" element={<ProfileContainer profileState={profileState.profileData} />} />
+              <Route path="/profile/:profileId?" element={<ProfileContainer profileState={profileState.profileData} />} />
               <Route path="/posts" element={<PostsContainer state={postsState.posts} />} />
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
@@ -48,7 +49,7 @@ const App = () => {
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />
               <Route path="/settings" element={<Settings />} />
-              <Route path="/poker" element={<PokerGameContainer />} />
+              <Route path="/poker" element={<PokerGameContainer state={pokerState} />} />
             </Routes>
           </div>
         </div>
