@@ -1,13 +1,12 @@
-// Profile.jsx
 import React from "react";
 import style from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPhotos from './MyPhotos/MyPhotos';
 
 const Profile = (props) => {
-  const { profileState } = props;
+  const { profile } = props;
 
-  let fotoElements = profileState.photosLarge.map(foto => 
+  let fotoElements = profile.photosLarge.map(foto => 
     <MyPhotos id={foto.id} foto={foto.name} key={foto.id} />
   );
 
@@ -15,7 +14,7 @@ const Profile = (props) => {
     <div className={style.profile_wrapper}>
       <h3 className={style.title}>Profile</h3>
       <div>
-        <ProfileInfo profile={props.props} />
+        <ProfileInfo profile={profile} />
       </div>
       
       <div className={style.wrapper_photo}>
@@ -27,5 +26,6 @@ const Profile = (props) => {
 };
 
 export default Profile;
+
 
 

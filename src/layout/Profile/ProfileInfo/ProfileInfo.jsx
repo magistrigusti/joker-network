@@ -1,12 +1,21 @@
 import React from 'react';
 import style from './ProfileInfo.module.css';
-
+import Preloader from '../../../components/common/Preloader/Preloader';
+import myAvatar from '../../../img/avatars/avatar.png';
 
 const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
+
   return (
     <div className={style.profileInfo_wrapper}>
       <div>
-        <img className={style.avatar} src={props.profile.photos.avatar} alt="Avatar" />
+        <img 
+          className={style.avatar} 
+          src={props.profile.photos.large || myAvatar} 
+          alt="Avatar" 
+        />
         <h5 className={style.name}>{props.profile.fullName}</h5>
         <div className={style.years}>
           <p>Years Old:  </p>
@@ -26,7 +35,7 @@ const ProfileInfo = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ProfileInfo;
