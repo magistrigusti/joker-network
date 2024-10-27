@@ -1,0 +1,85 @@
+.table_wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  background-color: #0e7b1a;
+  font-family: "Cinzel", serif;
+}
+
+.table {
+  width: 1400px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a2a2a 0%, #000000 100%);
+  position: relative;
+  border: 8px solid #ffffff;
+}
+
+.title {
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.title_status {
+  color: white;
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.status {
+  margin: 0;
+  color: white;
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.pot {
+  color: var(--text-title);
+  font-family: "Cinzel", serif; 
+  text-align: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.players {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.fold { background-color: red; color: white; }
+.call { background-color: yellow; }
+.raise { background-color: green; color: white; }
+
+.card_image {
+  width: 80px; /* или любое другое значение */
+  height: auto;
+  margin: 5px; /* отступ между картами */
+}
+
+.player_button {
+  display: flex;
+  gap: 10px; /* Пробел между кнопками */
+  justify-content: center; /* Центрируем кнопки по горизонтали */
+  margin-top: 20px; /* Добавьте отступ сверху, чтобы кнопки не прилипали к картам */
+}

@@ -1,20 +1,19 @@
-
-import PokerTable from './PokerTable/PokerTable';
 import { connect } from 'react-redux';
+import PokerTable from './PokerTable/PokerTable';
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     pokerPage: state.pokerPage,
-  }
+  };
 };
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
+    // Определите свои действия dispatch здесь, если это необходимо
+  };
+};
 
-  }
-}
-
-const PokerGameContainer = connect(mapStateToProps, mapDispatchToProps) (PokerTable)
- 
+const PokerGameContainer = connect(mapStateToProps, mapDispatchToProps)(PokerTable);
 
 export default PokerGameContainer;
+
