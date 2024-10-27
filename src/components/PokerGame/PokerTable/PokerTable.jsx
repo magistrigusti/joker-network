@@ -14,7 +14,7 @@ const PokerTable = () => {
     dispatch(createDeck()); // Создание колоды при загрузке
     dispatch(dealCards());   // Раздача карт
   }, [dispatch]);
-  
+
 
   if (!playerHand.length && !dealerHand.length) {
     return <div>Loading...</div>; // Покажите загрузку, если нет карт
@@ -24,7 +24,7 @@ const PokerTable = () => {
     <div className="table-wrapper">
       <div className="table">
         <h1 className="title">Покерный стол</h1>
-        
+
         <h3>Статус игры: </h3>
         <p>{gameStatus}</p>
         <ButtonGame text="deal cards" />
@@ -38,12 +38,29 @@ const PokerTable = () => {
 
         <div className="players">
           <div className="player player1">
-            <h2>Игрок: {playerHand.map(card => `${card.value} of ${card.suit}`).join(', ')}</h2>
+            <h2>Игрок:</h2>
+            {playerHand.map((card, index) => (
+              <img
+                key={index}
+                src={`/cards/${card.value}_of_${card.suit}.png`}
+                alt={`${card.value} of ${card.suit}`}
+                className="card-image"
+              />
+            ))}
           </div>
           <div className="player player2">
-            <h2>Дилер: {dealerHand.map(card => `${card.value} of ${card.suit}`).join(', ')}</h2>
+            <h2>Дилер:</h2>
+            {dealerHand.map((card, index) => (
+              <img
+                key={index}
+                src={`/cards/${card.value}_of_${card.suit}.png`}
+                alt={`${card.value} of ${card.suit}`}
+                className="card-image"
+              />
+            ))}
           </div>
         </div>
+
 
         <div>
           <ButtonGame text="fold" />

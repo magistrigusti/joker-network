@@ -10,7 +10,7 @@ const PokerGame = ({ playerHand, dealerHand, gameStatus }) => {
         <h2>Player Hand</h2>
         {playerHand.map((card, index) => (
           <div key={index} className={`card ${card.suit}`}>
-            {card.value}
+            {card.value} 
           </div>
         ))}
       </div>

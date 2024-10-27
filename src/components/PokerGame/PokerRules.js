@@ -99,7 +99,7 @@ export const determineWinner = (playerHand, dealerHand) => {
     return { winner: 'Dealer', hand: dealerResult.name };
   } else {
     // Сравнение карт в случае равенства
-    const playerValues = playerHand.map(card => cardValueMap[card.value]).sort((a, b) => b - a);
+    const playerValues = playerHand.map(card => cardValueMap[card.value]).sort((a, b) => b - a); 
     const dealerValues = dealerHand.map(card => cardValueMap[card.value]).sort((a, b) => b - a);
     
     for (let i = 0; i < playerValues.length; i++) {

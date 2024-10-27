@@ -67,3 +67,9 @@
 .fold { background-color: red; color: white; }
 .call { background-color: yellow; }
 .raise { background-color: green; color: white; }
+
+.card-image {
+  width: 100px; /* или любое другое значение */
+  height: auto;
+  margin: 5px; /* отступ между картами */
+}

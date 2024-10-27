@@ -10,6 +10,7 @@ import groupsReducer from './groups-reducer';
 import newsReducer from './news-reducer';
 import usersReducer from './users-reducer';
 import pokerReducer from './poker-reducer';
+import authReducer from './auth-reducer';
 
 // Комбинируем редюсеры
 const rootReducer = combineReducers({
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   newsPage: newsReducer,
   usersPage: usersReducer, 
   pokerPage: pokerReducer,
+  auth: authReducer,
 });
 
 // Создаем хранилище

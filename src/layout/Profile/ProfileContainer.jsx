@@ -17,18 +17,20 @@ function withRouter(Component) {
 class ProfileContainer extends React.Component {
   
   async componentDidMount() {
-    
-    const { profileId } = this.props.router.params; // Используем profileId из URL
-    if (!profileId) {
-      profileId = 1;
-    }
+    const { profileId } = this.props.router.params;
+    const validProfileId = profileId || 1; // Заменяем profileId на 1, если он не задан
+
     try {
-      const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profileId}`);
-      this.props.setUserProfile(response.data);
+        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${validProfileId}`);
+        this.props.setUserProfile(response.data);
     } catch (error) {
-      console.error("Error fetching profile data:", error);
+        console.error("Error fetching profile data:", error);
+        // Можно добавить обработку состояния ошибки здесь, например:
+        // this.setState({ error: "Ошибка загрузки данных профиля." });
     }
-  }
+}
+
+  
 
   render() {
     if (!this.props.profile) {

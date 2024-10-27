@@ -47,7 +47,7 @@ const gameSlice = createSlice({
           state.gameStatus = 'Игрок сделал колл.';
           break;
         case 'raise':
-          state.pot += 100; // Пример увеличения ставки при рейзе
+          state.pot += 100; // Пример увеличения ставки при рейзе 
           state.gameStatus = 'Игрок сделал рейз.';
           break;
         default:

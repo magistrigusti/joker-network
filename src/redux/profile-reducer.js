@@ -31,10 +31,8 @@ let initialState = {
       github: null,
     },
     photos: {
-      small:
-        "https://social-network.samuraijs.com/activecontent/images/users/2/user-small.jpg?v=0",
-      large:
-        "https://social-network.samuraijs.com/activecontent/images/users/2/user.jpg?v=0",
+      small: myfoto1,
+      large: myfoto3,
     },
     photosLarge: [
       { id: 1, name: myfoto3 },

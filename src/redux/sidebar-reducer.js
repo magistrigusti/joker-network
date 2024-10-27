@@ -12,7 +12,7 @@ let initialState = {
     { id: 9, to: "/music", name: "Music", iconName: "FaMusic" },
     { id: 10, to: "/video", name: "Video", iconName: "FaVideo" },
     { id: 11, to: "/settings", name: "Settings", iconName: "FaGear" },
-    { id: 12, to: "/poker", name: "Poker", iconName: "GiPokerHand" }
+    { id: 12, to: "/poker", name: "Poker", iconName: "GiPokerHand" },
   ]
 };
 

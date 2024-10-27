@@ -23,6 +23,16 @@
   width: 100%;
 }
 
+.login_block {
+  float: right; 
+  padding-right: 60px;
+}
+
+.login_block a {
+  color: white;
+  font-size: 28px;
+}
+
 @media (max-width: 431px) {
   .header_nav {
     display: none; /* Скрываем иконки в шапке на мобильных устройствах */
