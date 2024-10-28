@@ -5,24 +5,25 @@ import { follow, unfollow, setUsers, setCurrentPage,
 import axios from 'axios';
 import Users from './Users/Users';
 import Preloader from '../../components/common/Preloader/Preloader';
+import { getUsers } from '../../api/api';
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true);
 
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items);
-                this.props.setUsersTotalCount(response.data.totalCount);
-            });
+        getUsers(this.props.currentPage, this.props.pageSize).then(response => {
+            this.props.toggleIsFetching(false);
+            this.props.setUsers(response.data.items);
+            this.props.setUsersTotalCount(response.data.totalCount);
+        });
     }
 
     onPageChanged = (pageNumber) => {
         this.props.toggleIsFetching(true);
         this.props.setCurrentPage(pageNumber);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+
+        getUsers(this.props.currentPage, pageNumber)
             .then(response => {
                 this.props.toggleIsFetching(false);
                 this.props.setUsers(response.data.items);
@@ -34,7 +35,7 @@ class UsersContainer extends React.Component {
             <>
                 {this.props.isFetching ? <Preloader /> : null}
                 <Users onPageChanged={this.onPageChanged}
-                users={this.props.users}
+                users={this.props.users} 
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
                 pageSize={this.props.pageSize}
