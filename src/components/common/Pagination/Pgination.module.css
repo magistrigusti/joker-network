@@ -1,0 +1,114 @@
+.users_wrapper {
+  display: block;
+  /* position: relative; */
+  color: var(--text-color);
+  width: 100%;
+  /* font-size: 2em; */
+  font-family: "Rye", serif;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(66, 53, 37, 0.726) 0%, rgba(148,187,233, 0.5) 100%);
+  padding-left: 40px;
+  padding-top: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.pagination {
+  font-size: 18px;
+  padding: 15px;
+  text-align: center;
+}
+
+.pageNumber {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #000;
+}
+
+.selectedPade {
+  color: var(--text-inactive);
+}
+
+.selectedPage {
+  font-weight: bold;
+  color: #ff6347; /* Например, цвет для выбранной страницы */
+  border-bottom: 2px solid #ff6347;
+}
+
+.users {
+  display: flex;
+  text-align: center;
+  align-items: center;
+
+}
+
+.user {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.button_users {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.button_wrapper {
+  padding-bottom: 25px;
+  padding-left: 20px;
+}
+
+.button {
+  padding-top: -16px;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button button {
+  border: none;
+}
+
+.user_dates {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.date {
+  padding: 5px 20px;
+  width: 250px;
+}
+
+.name {
+  color: var(--text-inactive);   
+}
+
+
+.date_status {
+  padding: 10px;
+  padding-left: 50px;
+  text-align: center;
+  align-items: center;
+  min-width: 250px;
+  max-height: 80px;
+}
+
+
+.status {
+  display: block;
+  color: var(--text-active);
+  
+}
