@@ -1,4 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { thunk } from 'redux-thunk'; // Измененный импорт
 import postsReducer from './posts-reducer';
 import dialogsReducer from './dialogs-reducer';
 import sidebarReducer from './sidebar-reducer';
@@ -28,9 +29,10 @@ const rootReducer = combineReducers({
   auth: authReducer,
 });
 
-// Создаем хранилище
+// Создаем хранилище с middleware
 const store = configureStore({
   reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 window.store = store;

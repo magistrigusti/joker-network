@@ -1,4 +1,3 @@
-// api/api.js
 import axios from "axios";
 
 const instance = axios.create({
@@ -8,16 +7,16 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-  getUsers(currentPage = 2, pageSize = 10) {
-    return instance.get(`users?page=${currentPage}&count=${pageSize}`)
-      .then(response => response.data);
+  async getUsers(currentPage = 2, pageSize = 10) {
+    const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
+    return response.data;
+  },
+  async follow(id) {
+    const response = await instance.post(`follow/${id}`);
+    return response.data;
+  },
+  async unfollow(id) {
+    const response = await instance.delete(`follow/${id}`);
+    return response.data;
   }
-};
-
-export const addUsers = (id) => {
-  return instance.post(`follow/${id}`).then(response => response.data);
-};
-
-export const deleteUsers = (id) => {
-  return instance.delete(`follow/${id}`, {}).then(response => response.data);
 };

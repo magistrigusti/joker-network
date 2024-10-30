@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Users.module.css';
 import ImgUsers from '../../../img/avatars/fogundes.png';
-import { addUsers, deleteUsers } from '../../../api/api';
+import { usersAPI } from '../../../api/api';
 import Pagination from '../../../components/common/Pagination/Pagination'
 
 let Users = (props) => {
@@ -29,28 +29,10 @@ let Users = (props) => {
                             {user.followed
                                 ? <button className={style.button} 
                                     disabled={props.followingInProgress.some(id => id === user.id)}
-                                    onClick={async () => {
-                                        await props.toggleFollowingProgress(true, user.id);
-                                        const response = await deleteUsers(user.id);
-
-                                        if (response.resultCode === 0) {
-                                            props.unfollow(user.id);
-                                        };
-
-                                        props.toggleFollowingProgress(false, user.id);
-                                    }}>Unfollow</button>
+                                    onClick={async () => { props.unfollow(user.id) }}>Unfollow</button>
                                 : <button className={style.button} 
                                     disabled={props.followingInProgress.some(id => id === user.id)}
-                                    onClick={async () => {
-                                    await props.toggleFollowingProgress(true, user.id);
-                                        const response = await addUsers(user.id);
-
-                                        if (response.resultCode === 0) {
-                                            props.follow(user.id);
-                                        };
-
-                                        props.toggleFollowingProgress(false, user.id);
-                                    }}>Follow</button>
+                                    onClick={async () => {props.follow(user.id);}}>Follow</button>
                             }
                         </div>
                     </span>
