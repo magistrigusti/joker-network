@@ -24,11 +24,11 @@ const App = () => {
   const postsState = useSelector(state => state.postsPage);
   const friendsState = useSelector(state => state.friendsPage);
   const dialogsState = useSelector(state => state.dialogsPage);
-  const usersPage = useSelector(state => state.usersPage);
+  const usersState = useSelector(state => state.usersPage);
   const videoState = useSelector(state => state.videoPage);
   const musicState = useSelector(state => state.musicPage);
   const pokerState = useSelector(state => state.pokerPage);
-
+  const newsState = useSelector(state => state.newsPage);
 
   return (
     <TonConnectUIProvider manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/">
@@ -44,8 +44,8 @@ const App = () => {
               <Route path="/friends" element={<FriendsContainer state={friendsState} />} />
               <Route path="/dialogs" element={<DialogsContainer state={dialogsState} />} />
               <Route path="/groups" element={<GroupsContainer />} />
-              <Route path='/users' element={<UsersContainer state={usersPage} />} />
-              <Route path="/news" element={<NewsContainer />} />
+              <Route path='/users' element={<UsersContainer state={usersState} />} />
+              <Route path="/news" element={<NewsContainer state={newsState} />} />
               <Route path="/music" element={<MusicContainer state={musicState} />} />
               <Route path="/video" element={<VideoContainer state={videoState} />} />
               <Route path="/settings" element={<Settings />} />

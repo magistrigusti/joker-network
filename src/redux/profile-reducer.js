@@ -18,7 +18,7 @@ let initialState = {
   profileData: {
     userId: 1,
     fullName: "Knyazhe",
-    yearsOld: 39,
+    // yearsOld: 39,
     aboutMe: "I'm a freelance web developer",
     userStatus: "I'm a joker",
     lookingForAJob: false,
@@ -62,7 +62,7 @@ const profileReducer = (state = initialState, action) => {
           ...action.profile,
           contacts: {
             ...state.profileData.contacts, // Используем существующие контакты из initialState
-            ...action.profile.contacts // Обновляем только те, что пришли в ответе
+            ...action.profile?.contacts // Обновляем только те, что пришли в ответе
           },
           photos: {
             small: action.profile?.photos?.small || state.profileData.photos.small,

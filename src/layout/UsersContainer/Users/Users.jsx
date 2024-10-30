@@ -2,14 +2,17 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Users.module.css';
 import ImgUsers from '../../../img/avatars/fogundes.png';
-import { usersAPI } from '../../../api/api';
 import Pagination from '../../../components/common/Pagination/Pagination'
 
 let Users = (props) => {
 
     return (
         <div className={style.users_wrapper}>
-            <Pagination onPageChanged={props.onPageChanged} currentPage={props.currentPage} totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} />
+            <Pagination onPageChanged={props.onPageChanged} 
+                currentPage={props.currentPage} 
+                totalUsersCount={props.totalUsersCount} 
+                pageSize={props.pageSize} 
+            />
 
             {/* Список пользователей */}
             {props.users.filter(user => user.photos.small !== null).map(user => (
