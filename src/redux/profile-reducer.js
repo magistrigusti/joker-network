@@ -2,7 +2,6 @@ import myfoto1 from "../img/myfoto-1.png";
 import myfoto2 from "../img/myfoto-2.png";
 import myfoto3 from "../img/myfoto-3.png";
 import myfoto4 from "../img/myfoto-4.png";
-import myAvatar from "../img/avatars/avatar.png";
 import myfoto5 from "../img/myfoto-5.png";
 import myfoto6 from "../img/myfoto-6.png";
 import myfoto7 from "../img/myfoto-7.png";
