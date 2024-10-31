@@ -10,6 +10,7 @@ import myfoto9 from "../img/joker-photo.png";
 import myfoto10 from "../img/joker-photo2.png";
 import myfoto11 from "../img/joker-photo3.png";
 import myfoto12 from "../img/joker-photo4.png";
+import {usersAPI} from '../api/api';
 
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 
@@ -59,14 +60,6 @@ const profileReducer = (state = initialState, action) => {
         profileData: {
           ...state.profileData,
           ...action.profile,
-          contacts: {
-            ...state.profileData.contacts, // Используем существующие контакты из initialState
-            ...action.profile?.contacts // Обновляем только те, что пришли в ответе
-          },
-          photos: {
-            small: action.profile?.photos?.small || state.profileData.photos.small,
-            large: action.profile?.photos?.large || state.profileData.photos.large
-          }
         }
       };
     }
@@ -76,9 +69,12 @@ const profileReducer = (state = initialState, action) => {
 };
 
 
-export const setUserProfile = (profile) => ({
-  type: SET_USER_PROFILE,
-  profile,
-});
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile,});
+
+export const getUserProfile = (userId) => async (dispatch) => {
+  await usersAPI.getProfile(userId).then(response => {
+    dispatch(setUserProfile(response.data))
+  })
+}
 
 export default profileReducer;

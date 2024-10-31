@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Подключаем API ключ из .env файла
-const apiKey = process.env.REACT_APP_API_KEY;
+// const apiKey = process.env.API_KEY;
 
 // Инициализируем основной инстанс Axios с заголовками и базовым URL
 const instance = axios.create({
@@ -9,13 +9,13 @@ const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
   headers: { 
     "API-KEY": "3e676cbf-185e-4a54-8cab-f6d23a78e762",
-    "Authorization": apiKey ? `Bearer ${apiKey}` : ""
+    "Authorization":  `Bearer 95b4b6e1-f4a8-46e5-a229-12b74db3c10c`
   }
 });
 
 instance.interceptors.request.use(function (config) {
   config.headers["Authorization"] = "Bearer " + localStorage.getItem("sn-token");
-  return config; // добавь return
+  return config; 
 });
 
 

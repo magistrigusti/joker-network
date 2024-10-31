@@ -1,32 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { setUserProfile } from '../../redux/profile-reducer';
+import { getUserProfile } from '../../redux/profile-reducer';
 import Profile from './Profile';
-import { usersAPI } from '../../api/api';
 import { useParams } from 'react-router-dom';
 
-const ProfileContainer = ({ profile, setUserProfile }) => {
-  const { profileId } = useParams();
-  const userId = profileId || 1;
+const ProfileContainer = ({ profile, getUserProfile }) => {
+  const { profileId } = useParams(); // Получаем параметр profileId из URL
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      if (!profile) {
-        try {
-          const response = await usersAPI.getProfile(userId);
-          setUserProfile(response.data);
-        } catch (error) {
-          console.error("Failed to fetch profile:", error);
-        }
-      }
-    };
-
-    fetchProfile();
-  }, [profile, userId, setUserProfile]);
-
-  if (!profile) {
-    return <div>Loading...</div>;
-  }
+    const userId = profileId || 1; // Используем profileId, если он есть, иначе - 1
+    getUserProfile(userId); 
+  }, [profileId, getUserProfile]); // Зависимости useEffect
 
   return <Profile profile={profile} />;
 };
@@ -35,4 +19,4 @@ const mapStateToProps = (state) => ({
   profile: state.profilePage.profileData,
 });
 
-export default connect(mapStateToProps, { setUserProfile })(ProfileContainer);
+export default connect(mapStateToProps, { getUserProfile })(ProfileContainer);

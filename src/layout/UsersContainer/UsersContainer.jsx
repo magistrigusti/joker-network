@@ -41,6 +41,6 @@ let mapStateToProps = (state) => ({
     followingInProgress: state.usersPage.followingInProgress,
 });
 
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps, { 
     follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers
 })(UsersContainer);
