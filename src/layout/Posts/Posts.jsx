@@ -11,7 +11,9 @@ const Posts = (props) => {
   const newPostElement = React.createRef();
 
   const handleAddPost = () => {
+    console.log('Добавление поста')
     props.addPost();
+   
   };
 
   const handlePostChange = () => {
@@ -26,7 +28,7 @@ const Posts = (props) => {
       <div className={style.posts_page}>
         <div className={style.new_post}>
           <img className={style.avatar}
-            src={props.profile?.photos?.avatar}
+            src={props.profile.photos.large}
             alt="avatar"
           />
 
@@ -42,7 +44,7 @@ const Posts = (props) => {
             />
           </div>
           <div>
-            <PostsBtn />
+            <PostsBtn className={style.post_button} onClick={handleAddPost} />
             {/* <button className={style.post_button} onClick={handleAddPost}>
               Add post
             </button> */}

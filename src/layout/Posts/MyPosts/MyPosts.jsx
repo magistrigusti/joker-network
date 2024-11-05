@@ -6,7 +6,7 @@ const MyPosts = (props) => {
   return (
     <div className={style.posts}>
       <div className={style.post_item}>
-        <img className={style.post_avatar} src={props.photos?.avatar} alt="avatar img" />
+        <img className={style.post_avatar} src={props.photos?.small} alt="avatar img" />
         {props.message}
         <div>
           <img className={style.like} src={like} alt="like img" />

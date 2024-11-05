@@ -21,6 +21,7 @@ const Music = ({ state }) => {
       </div>
 
       <div className={style.music_item}>
+
         {musicItemElements}
       </div>
     </div>

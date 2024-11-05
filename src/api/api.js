@@ -24,6 +24,8 @@ const instanceNews = axios.create({
   baseURL: 'https://newsapi.org/v2/top-headlines',
 });
 
+
+
 // Функции usersAPI для работы с пользователями
 export const usersAPI = {
   async getUsers(currentPage = 2, pageSize = 10) {
