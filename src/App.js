@@ -25,8 +25,7 @@ const App = () => {
   const friendsState = useSelector(state => state.friendsPage);
   const dialogsState = useSelector(state => state.dialogsPage);
   const usersState = useSelector(state => state.usersPage);
-  const videoState = useSelector(state => state.videoPage);
-  const musicState = useSelector(state => state.musicPage);
+  const videoState = useSelector(state => state.videoPage); 
   const pokerState = useSelector(state => state.pokerPage);
   const newsState = useSelector(state => state.newsPage);
 
@@ -46,7 +45,8 @@ const App = () => {
               <Route path="/groups" element={<GroupsContainer />} />
               <Route path='/users' element={<UsersContainer state={usersState} />} />
               <Route path="/news" element={<NewsContainer state={newsState} />} />
-              <Route path="/music" element={<MusicContainer state={musicState} />} />
+              <Route path="/music" element={<MusicContainer />} />
+
               <Route path="/video" element={<VideoContainer state={videoState} />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/poker" element={<PokerGameContainer state={pokerState} />} />
